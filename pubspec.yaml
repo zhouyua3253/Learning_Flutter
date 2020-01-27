@@ -30,6 +30,9 @@ dependencies:
  # Network request
   dio: ^3.0.8
 
+  # https://github.com/best-flutter/flutter_swiper/blob/master/README-ZH.md
+  flutter_swiper: ^1.1.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

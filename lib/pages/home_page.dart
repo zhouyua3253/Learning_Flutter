@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
+import 'package:flutter_tutorial/pages/swiper_page.dart';
+import 'network_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<String> _items = [
@@ -23,7 +25,8 @@ class HomePage extends StatelessWidget {
     'Picker',
     'Animation',
     '水波纹',
-    'Dio_Network'
+    SwiperPage.routeName,
+    NetworkPage.routeName
   ];
 
   @override
@@ -65,7 +68,6 @@ class HomePage extends StatelessWidget {
   }
 
   void _onClickButton(BuildContext context, String btnName) {
-    print(btnName);
     Navigator.pushNamed(context, "/$btnName");
   }
 }

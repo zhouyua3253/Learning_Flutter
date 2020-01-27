@@ -16,6 +16,7 @@ import 'package:flutter_tutorial/pages/picker_page.dart';
 import 'package:flutter_tutorial/pages/scrollview_page.dart';
 import 'package:flutter_tutorial/pages/sliver_page.dart';
 import 'package:flutter_tutorial/pages/stack_page.dart';
+import 'package:flutter_tutorial/pages/swiper_page.dart';
 import 'package:flutter_tutorial/pages/text_page.dart';
 import 'package:flutter_tutorial/pages/textfield_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
@@ -44,12 +45,10 @@ void main() => runApp(MaterialApp(
         '/Picker': (context) => PickerPage(),
         '/Animation': (context) => AnimationPage(),
         '/水波纹': (context) => InkWellPage(),
-        '/Dio_Network': (context) => NetworkPage(),
+        "/${SwiperPage.routeName}": (context) => SwiperPage(),
+        "/${NetworkPage.routeName}": (context) => NetworkPage(),
       },
       theme: ThemeData(
           buttonTheme: ButtonThemeData(
-              minWidth: 0,
-              height: 0,
-              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap)
-      ),
+              minWidth: 0, height: 0, materialTapTargetSize: MaterialTapTargetSize.shrinkWrap)),
     ));

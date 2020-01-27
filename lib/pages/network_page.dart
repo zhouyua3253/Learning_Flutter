@@ -3,6 +3,9 @@ import 'package:flutter_tutorial/customWidget/button.dart';
 import 'package:flutter_tutorial/utils/network.dart';
 
 class NetworkPage extends StatelessWidget {
+
+	static const String routeName = 'Network';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
