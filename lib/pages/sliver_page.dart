@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SliverPage extends StatelessWidget {
@@ -12,69 +13,73 @@ class SliverPage extends StatelessWidget {
         SliverChildBuilderDelegate(_renderListFixedExtentItem, childCount: _items.length);
     SliverChildBuilderDelegate _sliverBuildDelegate =
         SliverChildBuilderDelegate(_renderListItem, childCount: _items.length);
+
     return Material(
       child: SafeArea(
         top: false,
-        child: CustomScrollView(
-          /// 安卓上超出范围的上下拉
-          physics: BouncingScrollPhysics(),
-          slivers: <Widget>[
-            SliverAppBar( // Based on `SliverPersistentHeader`
-              /// 可以向下拉伸
-              stretch: true,
+        child: NotificationListener(
+          child: CustomScrollView(
+            /// 安卓上超出范围的上下拉
+            physics: BouncingScrollPhysics(),
+            slivers: <Widget>[
+              SliverAppBar(
+                // Based on `SliverPersistentHeader`
+                /// 可以向下拉伸
+                stretch: true,
 
-              /// 粘滞效果
-              pinned: true,
-              expandedHeight: 250,
-              backgroundColor: Colors.pinkAccent,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text('SliverAppBar'),
-                centerTitle: true,
+                /// 粘滞效果
+                pinned: true,
+                expandedHeight: 250,
+                backgroundColor: Colors.pinkAccent,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Text('SliverAppBar'),
+                  centerTitle: true,
 
-                /// 向下拉伸放大时的效果
-                stretchModes: [StretchMode.zoomBackground, StretchMode.fadeTitle],
-                background: Image.asset(
-                  'images/3.jpg',
-                  fit: BoxFit.cover,
+                  /// 向下拉伸放大时的效果
+                  stretchModes: [StretchMode.zoomBackground, StretchMode.fadeTitle],
+                  background: Image.asset(
+                    'images/3.jpg',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                color: Colors.orange,
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  'SliverToBoxAdapter()\ncontains a single box widget',
-                  textScaleFactor: 1.3,
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              SliverToBoxAdapter(
+                child: Container(
+                  color: Colors.orange,
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    'SliverToBoxAdapter()\ncontains a single box widget',
+                    textScaleFactor: 1.3,
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  height: 120,
+                  alignment: Alignment.center,
                 ),
-                height: 120,
-                alignment: Alignment.center,
               ),
-            ),
-            SliverFixedExtentList(
-              itemExtent: 60,
-              delegate: _sliverFixedExtentBuildDelegate,
-            ),
-            SliverList(
-              delegate: _sliverBuildDelegate,
-            ),
-            SliverPadding(
-              padding: EdgeInsets.all(5),
-              sliver: SliverGrid.count(
-                  crossAxisCount: 2,
+              SliverFixedExtentList(
+                itemExtent: 60,
+                delegate: _sliverFixedExtentBuildDelegate,
+              ),
+              SliverList(
+                delegate: _sliverBuildDelegate,
+              ),
+              SliverPadding(
+                padding: EdgeInsets.all(5),
+                sliver: SliverGrid.count(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 2,
+                    children: _renderGridChildren(Colors.cyan, 'SliverGrid.count')),
+              ),
+              SliverGrid.extent(
+                  maxCrossAxisExtent: 250,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   childAspectRatio: 2,
-                  children: _renderGridChildren(Colors.cyan, 'SliverGrid.count')),
-            ),
-            SliverGrid.extent(
-                maxCrossAxisExtent: 250,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                childAspectRatio: 2,
-                children: _renderGridChildren(Colors.yellow, 'SliverGrid.extent'))
-          ],
+                  children: _renderGridChildren(Colors.yellow, 'SliverGrid.extent')),
+            ],
+          ),
         ),
       ),
     );

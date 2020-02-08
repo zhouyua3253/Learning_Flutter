@@ -7,10 +7,10 @@ class SwiperPage extends StatelessWidget {
   static String routeName = 'Swiper';
 
   final List<String> _imgUrls = [
-    'https://static.cnbetacdn.com/frontend/202001/dd57fac41703f0d_292x177.jpg',
-    'https://static.cnbetacdn.com/frontend/202001/d346445f7ead218_292x177.jpg',
-    'https://static.cnbetacdn.com/frontend/202001/618754ccf37b050_292x177.jpg',
-    'https://static.cnbetacdn.com/frontend/202001/9e961ac0c954dcb_292x177.jpg'
+    'https://static.cnbetacdn.com/frontend/202002/55f321828a3bdc9_292x177.jpg',
+    'https://static.cnbetacdn.com/frontend/202002/f3f505e11bd4e25_292x177.jpg',
+    'https://static.cnbetacdn.com/frontend/202002/89a4b1fb643dadc_292x177.jpg',
+    'https://static.cnbetacdn.com/frontend/202002/cb2d953c2995340_292x177.png'
   ];
 
   @override

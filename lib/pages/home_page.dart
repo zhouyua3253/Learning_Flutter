@@ -1,12 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
+import 'package:flutter_tutorial/pages/future_builder_page.dart';
+import 'package:flutter_tutorial/pages/network_page.dart';
 import 'package:flutter_tutorial/pages/swiper_page.dart';
-import 'network_page.dart';
+import 'package:flutter_tutorial/pages/system_api_page.dart';
+import 'package:flutter_tutorial/pages/transform_page.dart';
+
+import 'blur_mask_page.dart';
+import 'clip_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<String> _items = [
     'Container',
+    TransformPage.routeName,
     'Stack',
     'Text',
     'Image',
@@ -25,8 +32,12 @@ class HomePage extends StatelessWidget {
     'Picker',
     'Animation',
     '水波纹',
+    ClipPage.routeName,
+    BlurPage.routeName,
     SwiperPage.routeName,
-    NetworkPage.routeName
+    FutureBuilderPage.routeName,
+    NetworkPage.routeName,
+    SystemApiPage.routeName
   ];
 
   @override

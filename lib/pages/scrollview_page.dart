@@ -60,20 +60,37 @@ class _ScrollViewPageState extends State<ScrollViewPage> {
               Divider(),
               Expanded(
                 flex: 1,
-                child: CupertinoScrollbar(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.all(10),
-                    physics: ClampingScrollPhysics(),
-                    child: Container(
-                      width: 600,
-                      color: Colors.blue,
-                      alignment: Alignment.center,
-                      child: Text(
-                        'physics: ClampingScrollPhysics',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
+                child: NotificationListener<ScrollNotification>(
+                  onNotification: (event) {
+                    // print(event);
+
+                    if (event is ScrollStartNotification) {
+                      print("ScrollStart ${event.dragDetails}");
+                    }
+                    if (event is ScrollUpdateNotification) {
+                      print("scrolling ${event.scrollDelta}");
+                    }
+                    if (event is ScrollEndNotification) {
+                      print("scrollEnd ${event.dragDetails}");
+                    }
+
+                    return true;
+                  },
+                  child: CupertinoScrollbar(
+                    child: SingleChildScrollView(
+                      padding: EdgeInsets.all(10),
+                      physics: ClampingScrollPhysics(),
+                      child: Container(
+                        width: 600,
+                        color: Colors.blue,
+                        alignment: Alignment.center,
+                        child: Text(
+                          'physics: ClampingScrollPhysics',
+                          style: TextStyle(color: Colors.white, fontSize: 24),
+                        ),
                       ),
+                      scrollDirection: Axis.horizontal,
                     ),
-                    scrollDirection: Axis.horizontal,
                   ),
                 ),
               ),

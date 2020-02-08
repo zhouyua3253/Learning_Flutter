@@ -27,6 +27,13 @@ class ImagePage extends StatelessWidget {
               colorBlendMode: BlendMode.softLight// overlay darken softLight
             ),
             Divider(),
+            Image.asset(
+                'images/3.jpg',
+                width: 200,
+                color: Colors.orangeAccent,
+                colorBlendMode: BlendMode.softLight// overlay darken softLight
+            ),
+            Divider(),
             Text('FadeInImage.assetNetwork'),
             FadeInImage.assetNetwork(
               height: 200,
