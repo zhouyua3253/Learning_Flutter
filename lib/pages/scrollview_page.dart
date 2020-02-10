@@ -60,6 +60,7 @@ class _ScrollViewPageState extends State<ScrollViewPage> {
               Divider(),
               Expanded(
                 flex: 1,
+                /// 当显式指定模板参数时，NotificationListener 便只会接收该参数类型的通知
                 child: NotificationListener<ScrollNotification>(
                   onNotification: (event) {
                     // print(event);
@@ -74,6 +75,8 @@ class _ScrollViewPageState extends State<ScrollViewPage> {
                       print("scrollEnd ${event.dragDetails}");
                     }
 
+                    /// 当返回值为true时，阻止冒泡，其父级Widget将再也收不到该通知
+                    /// 当返回值为false 时继续向上冒泡通知
                     return true;
                   },
                   child: CupertinoScrollbar(
