@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
+import 'dart:math' show pi;
 
 class TweenPage extends StatefulWidget {
   @override
   _TweenPageState createState() => _TweenPageState();
 }
 
-class _TweenPageState extends State<TweenPage> with SingleTickerProviderStateMixin {
+class _TweenPageState extends State<TweenPage>
+    with SingleTickerProviderStateMixin {
   /// AnimationController用于控制动画，它包含动画的启动forward()、停止stop() 、反向播放 reverse()等方法
   /// AnimationController派生自Animation<double>，因此可以在需要Animation对象的任何地方使用
   /// AnimationController在给定的时间段内线性的生成从0.0到1.0（默认区间）的数字, 也可以自己指定lowerBound、upperBound
@@ -26,14 +28,18 @@ class _TweenPageState extends State<TweenPage> with SingleTickerProviderStateMix
 
     /// controller在(0,2)之间变化，_customTween也是原始的两倍的变化幅度
     _animationController = AnimationController(
-        duration: Duration(seconds: 2), vsync: this, lowerBound: 0, upperBound: 2);
+        duration: Duration(seconds: 2),
+        vsync: this,
+        lowerBound: 0,
+        upperBound: 2);
 
     /// Tween.animate
     /// Tween 生成其他类型的插值，并绑定到controller上，controller在(0,1)之间变化,得到Animation<T>
-    _customTweenAnimation = Tween<double>(begin: 0, end: 300).animate(_animationController)
-      ..addStatusListener((AnimationStatus status) {
-        print("status -> $status");
-      });
+    _customTweenAnimation =
+        Tween<double>(begin: 0, end: pi).animate(_animationController)
+          ..addStatusListener((AnimationStatus status) {
+            print("status -> $status");
+          });
   }
 
   dispose() {
@@ -49,30 +55,23 @@ class _TweenPageState extends State<TweenPage> with SingleTickerProviderStateMix
       appBar: AppBar(
         title: Text('Animation'),
       ),
-      body: Container(
+      body: Center(
         child: AnimatedBuilder(
           animation: _customTweenAnimation,
           child: Container(
             width: 100,
             height: 100,
             color: Colors.redAccent,
+            child: Text(
+              'Tween',
+              textScaleFactor: 2,
+            ),
+            alignment: Alignment.center,
           ),
           builder: (context, child) {
-            double value = _customTweenAnimation.value.toDouble();
-            return Container(
-              color: Colors.grey[200],
-              child: Stack(
-                children: <Widget>[
-                  child,
-                  Container(
-                    width: 100,
-	                  height: 100,
-                    alignment: Alignment.center,
-                    child: Text("value -> $value"),
-                  )
-                ],
-              ),
-              padding: EdgeInsets.only(top: value, left: value * 0.5),
+            return Transform.rotate(
+              angle: _customTweenAnimation.value,
+              child: child,
             );
           },
         ),

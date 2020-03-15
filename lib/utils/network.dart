@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_tutorial/generated/json/base/json_convert_content.dart';
 
 class _NetworkUtil {
   Dio _dio;
@@ -19,8 +21,13 @@ class _NetworkUtil {
 
   Future<T> get<T>(String path, {Map<String, dynamic> params}) async {
     try {
-      Response<T> response = await _dio.get<T>(path, queryParameters: params);
-      return response.data;
+      Response response = await _dio.get(path, queryParameters: params);
+
+      if (response.statusCode != HttpStatus.ok) {
+        throw DioError(error: 'Something goes wrong.');
+      }
+
+      return JsonConvert.fromJsonAsT<T>(response.data);
     } on DioError catch (e) {
       throw e.error;
     }
@@ -28,11 +35,15 @@ class _NetworkUtil {
 
   Future<T> post<T>(String path, {Map<String, dynamic> params}) async {
     try {
-      Response response = await _dio.post<String>(path,
-          queryParameters: params, options: Options(headers: _createCustomHeaders()));
+      Response response = await _dio.post(path,
+          data: params,
+          options: Options(headers: _createCustomHeaders()));
 
-      final jsonObj = json.decode(response.data);
-      return jsonObj;
+      if (response.statusCode != HttpStatus.ok) {
+        throw DioError(error: 'Something goes wrong.');
+      }
+
+      return JsonConvert.fromJsonAsT<T>(response.data);
     } on DioError catch (e) {
       throw e.error;
     }
@@ -52,7 +63,8 @@ class _NetworkUtil {
   }
 
   void _addInterceptor() {
-    _dio.interceptors.add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
+    _dio.interceptors
+        .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
       /// Do something before send out a http request.
 
       /// 如果你想完成请求并返回一些自定义数据，可以返回一个`Response`对象
@@ -61,18 +73,19 @@ class _NetworkUtil {
 
       /// 如果你想终止请求并触发一个错误,你可以返回一个`DioError`对象
       /// 这样请求将被中止并触发异常，上层catchError会被调用
-      // return DioError(error: "Somthing goes wrong");
+      // return DioError(error: "Something goes wrong");
 
       /// Normal request
       return options;
     }, onResponse: (Response response) async {
       /// Do something after receive a response
-      print("Get response from ${response.request.path} -> $response");
+      debugPrint("Get response from ${response.request.path} -> $response");
 
       return response; // continue
     }, onError: (DioError e) async {
       /// Do something when receive a error
-      print("path => ${e.request.path}, type => ${e.type}, error => ${e.error}");
+      debugPrint(
+          "path => ${e.request.path}, type => ${e.type}, error => ${e.error}");
 
       return e; //continue
     }));

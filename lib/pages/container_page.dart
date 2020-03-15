@@ -24,7 +24,7 @@ class _ContainerPageState extends State<ContainerPage> {
   List<double> borderRadius = [10, 20, 30, 40, 50];
   double _radius = 10;
 
-  List aligns = [
+  List<Alignment> aligns = [
     Alignment.topLeft,
     Alignment.topRight,
     Alignment.bottomLeft,
@@ -32,6 +32,14 @@ class _ContainerPageState extends State<ContainerPage> {
     Alignment.center
   ];
   Alignment _alignment = Alignment.topLeft;
+
+  List<Widget> _children = [
+    Icon(Icons.view_list),
+    FlutterLogo(),
+    Text('child'),
+    Image.asset('images/2.jpg')
+  ];
+  int _childIndex = 0;
 
   void _changeContainerColor() {
     this.setState(() {
@@ -58,11 +66,22 @@ class _ContainerPageState extends State<ContainerPage> {
     });
   }
 
-  _startAlignmentAnimation() {
+  void _startAlignmentAnimation() {
     this.setState(() {
       int index = Random().nextInt(3);
-      List validAligns = aligns.where((e) => e != _alignment).toList();
+      List<Alignment> validAligns =
+          aligns.where((e) => e != _alignment).toList();
       _alignment = validAligns[index];
+    });
+  }
+
+  void _startChildAnimation() {
+    int newChildIndex = _childIndex + 1;
+    if (newChildIndex >= _children.length) {
+      newChildIndex = 0;
+    }
+    this.setState(() {
+      _childIndex = newChildIndex;
     });
   }
 
@@ -78,20 +97,39 @@ class _ContainerPageState extends State<ContainerPage> {
             }),
         elevation: 0,
       ),
-      body: Center(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               SizedBox(
                 height: 30,
               ),
-              Text('Material: 使用elevation实现阴影效果\nborderRadius实现圆角'),
+              Text('Material: 使用elevation实现阴影效果\nborderRadius实现圆角，无法剪切child'),
               Material(
                 elevation: 20,
                 borderRadius:
                     BorderRadius.horizontal(left: Radius.circular(30)),
                 color: Colors.cyan,
-                child: Container(
+                child: Container(width: 100, height: 100),
+              ),
+              Material(
+                elevation: 20,
+                borderRadius:
+                    BorderRadius.horizontal(left: Radius.circular(30)),
+                child: Image.asset(
+                  'images/1.jpg',
+                  fit: BoxFit.cover,
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              Material(
+                elevation: 20,
+                borderRadius:
+                    BorderRadius.horizontal(left: Radius.circular(30)),
+                child: Image.asset(
+                  'images/1.jpg',
+                  fit: BoxFit.cover,
                   width: 100,
                   height: 100,
                 ),
@@ -136,10 +174,7 @@ class _ContainerPageState extends State<ContainerPage> {
               AnimatedContainer(
                 width: _size,
                 height: _size,
-                child: Icon(
-                  Icons.add_to_queue,
-                  size: 30,
-                ),
+                child: _children[_childIndex],
                 alignment: _alignment,
                 // color: _color,
                 duration: Duration(seconds: 1),
@@ -172,6 +207,11 @@ class _ContainerPageState extends State<ContainerPage> {
                     child: Text("Alignment animation"),
                     padding: EdgeInsets.all(10),
                     onPressed: _startAlignmentAnimation,
+                  ),
+                  Button(
+                    child: Text("Child animation 没有动画效果"),
+                    padding: EdgeInsets.all(10),
+                    onPressed: _startChildAnimation,
                   ),
                 ],
               )

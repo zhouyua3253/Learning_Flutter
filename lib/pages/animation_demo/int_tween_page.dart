@@ -6,7 +6,8 @@ class IntTweenPage extends StatefulWidget {
   _IntTweenPageState createState() => _IntTweenPageState();
 }
 
-class _IntTweenPageState extends State<IntTweenPage> with SingleTickerProviderStateMixin {
+class _IntTweenPageState extends State<IntTweenPage>
+    with SingleTickerProviderStateMixin {
   /// AnimationController用于控制动画，它包含动画的启动forward()、停止stop() 、反向播放 reverse()等方法
   /// AnimationController派生自Animation<double>，因此可以在需要Animation对象的任何地方使用
   /// AnimationController在给定的时间段内线性的生成从0.0到1.0（默认区间）的数字, 也可以自己指定lowerBound、upperBound
@@ -24,9 +25,11 @@ class _IntTweenPageState extends State<IntTweenPage> with SingleTickerProviderSt
     /// AnimationController 只能生成数值类型的插值
     // _animationController = AnimationController(duration: Duration(seconds: 2), vsync: this, lowerBound: 0, upperBound: 300);
 
-    _animationController = AnimationController(duration: Duration(seconds: 5), vsync: this);
+    _animationController =
+        AnimationController(duration: Duration(seconds: 5), vsync: this);
 
-    _intTweenAnimation = IntTween(begin: 10, end: 20).animate(_animationController);
+    _intTweenAnimation =
+        IntTween(begin: 0, end: 200).animate(_animationController);
   }
 
   dispose() {
@@ -44,13 +47,15 @@ class _IntTweenPageState extends State<IntTweenPage> with SingleTickerProviderSt
       body: Center(
         child: AnimatedBuilder(
           animation: _intTweenAnimation,
+          child: Container(
+            color: Colors.red,
+            child: Text("IntTween", textScaleFactor: 1.5),
+          ),
           builder: (context, child) {
-            return Container(
-              width: _intTweenAnimation.value.toDouble() * 10,
-              height: _intTweenAnimation.value.toDouble() * 10,
-              color: Colors.yellow,
-              alignment: Alignment.center,
-              child: Text("value: ${_intTweenAnimation.value}", textScaleFactor: 1.5,),
+            double value = _intTweenAnimation.value.toDouble();
+            return Transform.translate(
+              offset: Offset(value, value),
+              child: child,
             );
           },
         ),

@@ -49,13 +49,13 @@ class _FormValidationPageState extends State<FormValidationPage> {
                       hintText: "What's your name?",
                     ),
                     validator: (value) {
-                      if (!value.contains(new RegExp(r'[A-Z]'))) {
+                      if (!value.contains(RegExp(r'[A-Z]'))) {
                         return 'Must have uppercase letters';
                       }
-                      if (!value.contains(new RegExp(r'[a-z]'))) {
+                      if (!value.contains(RegExp(r'[a-z]'))) {
                         return 'Must have lowercase letters';
                       }
-                      if (!value.contains(new RegExp(r'[0-9]'))) {
+                      if (!value.contains(RegExp(r'[0-9]'))) {
                         return 'Must have number';
                       }
 

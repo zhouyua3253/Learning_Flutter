@@ -6,7 +6,8 @@ class ColorTweenPage extends StatefulWidget {
   _ColorTweenPageState createState() => _ColorTweenPageState();
 }
 
-class _ColorTweenPageState extends State<ColorTweenPage> with SingleTickerProviderStateMixin {
+class _ColorTweenPageState extends State<ColorTweenPage>
+    with SingleTickerProviderStateMixin {
   /// AnimationController用于控制动画，它包含动画的启动forward()、停止stop() 、反向播放 reverse()等方法
   /// AnimationController派生自Animation<double>，因此可以在需要Animation对象的任何地方使用
   /// AnimationController在给定的时间段内线性的生成从0.0到1.0（默认区间）的数字, 也可以自己指定lowerBound、upperBound
@@ -24,10 +25,11 @@ class _ColorTweenPageState extends State<ColorTweenPage> with SingleTickerProvid
     /// AnimationController 只能生成数值类型的插值
     // _animationController = AnimationController(duration: Duration(seconds: 2), vsync: this, lowerBound: 0, upperBound: 300);
 
-    _animationController = AnimationController(duration: Duration(seconds: 1), vsync: this);
+    _animationController =
+        AnimationController(duration: Duration(seconds: 2), vsync: this);
 
-    _colorTweenAnimation =
-        ColorTween(begin: Colors.yellow, end: Colors.black87).animate(_animationController)
+    _colorTweenAnimation = ColorTween(begin: Colors.yellow, end: Colors.black.withOpacity(0.5))
+        .animate(_animationController)
           ..addStatusListener((AnimationStatus status) {
             print("status -> $status");
           });
@@ -49,10 +51,22 @@ class _ColorTweenPageState extends State<ColorTweenPage> with SingleTickerProvid
         child: AnimatedBuilder(
           animation: _colorTweenAnimation,
           builder: (context, child) {
-            return Container(
-              width: 100,
-              height: 100,
-              color: _colorTweenAnimation.value,
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: _colorTweenAnimation.value,
+                ),
+                Divider(),
+                Image.asset(
+                  'images/1.jpg',
+                  width: 300,
+                  color: _colorTweenAnimation.value,
+                  colorBlendMode: BlendMode.darken,
+                )
+              ],
             );
           },
         ),

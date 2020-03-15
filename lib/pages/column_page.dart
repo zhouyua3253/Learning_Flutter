@@ -26,6 +26,8 @@ class ColumnPage extends StatelessWidget {
                   )),
                 ),
               ),
+              Text('Spacer -> flex: 1'),
+              Spacer(),
               Container(
                 width: 80,
                 height: 120,
@@ -43,7 +45,7 @@ class ColumnPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   )),
                 ),
-              ),
+              )
             ],
           ),
         ),
