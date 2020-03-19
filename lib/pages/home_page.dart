@@ -101,9 +101,10 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _renderItem(BuildContext context, String item) {
-    return Button(
+    return FlatButton(
       child: Text(
         item,
+        textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white),
       ),
       color: Colors.redAccent[200],
