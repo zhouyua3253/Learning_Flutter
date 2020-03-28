@@ -86,7 +86,8 @@ class HomePage extends StatelessWidget {
         elevation: 5,
       ),
       body: SafeArea(
-        child: Padding(
+        child: Container(
+          width: MediaQuery.of(context).size.shortestSide,
           padding: EdgeInsets.all(10),
           child: GridView.count(
             crossAxisCount: 3,

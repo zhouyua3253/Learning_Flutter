@@ -111,6 +111,8 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
       return SizeTransition(
           sizeFactor: animation, child: child, axis: Axis.horizontal);
     }
+
+    return null;
   }
 
   Widget _customLayoutBuilder(
