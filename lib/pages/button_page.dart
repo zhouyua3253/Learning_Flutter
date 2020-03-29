@@ -22,188 +22,227 @@ class _ButtonPageState extends State<ButtonPage> {
       body: Center(
         child: Builder(
           builder: (context) {
-            return Column(
-              children: <Widget>[
-                Text('PopupMenuButton'),
-                PopupMenuButton<Object>(
-//                  child: Padding(
-//                      padding: EdgeInsets.all(10),
-//                      child: Text('PopupMenuButton')),
-                  offset: Offset(0, 200),
-                  tooltip: '选择器pop-up',
-                  shape: RoundedRectangleBorder(
-                      // side: BorderSide(color: Colors.green),
-                      borderRadius: BorderRadius.circular(20)),
-                  onSelected: (value) {
-                    _onPress(context, "Menu button select $value");
-                  },
-                  onCanceled: () {
-                    _onPress(context,
-                        "Dismiss the popup menu without selecting an item");
-                  },
-                  initialValue: 2,
-                  itemBuilder: _renderMenuButtonItems,
-                ),
-                Container(
-                  width: 200,
-                  child: DropdownButton<String>(
-                    hint: Text('请选择'),
-                    value: _dropdownButtonValue,
-                    icon: Icon(
-                      Icons.add,
-                      color: Colors.redAccent,
-                    ),
-                    // 占满空间
-                    isExpanded: true,
-                    elevation: 16,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text('DropdownButton-1'),
-                        value: 'DropdownButton-1',
-                      ),
-                      DropdownMenuItem(
-                          child: Text('DropdownButton-2'),
-                          value: 'DropdownButton-2'),
-                      DropdownMenuItem(
-                          child: Text('DropdownButton-3'),
-                          value: 'DropdownButton-3'),
-                    ],
-                    onChanged: (value) => setState(() {
-                      printError(value);
-                      _dropdownButtonValue = value;
-                    }),
-                  ),
-                ),
-                Divider(),
-                RaisedButton(
-                  child: Text('RaisedButton'),
-                  onPressed: () {
-                    _onPress(context, 'RaisedButton');
-                  },
-                ),
-                RaisedButton(
-                  elevation: 0,
-                  highlightElevation: 0,
-                  child: Text('RaisedButton.withoutElevation'),
-                  onPressed: () {
-                    _onPress(context, 'RaisedButton.withoutElevation');
-                  },
-                ),
-                RaisedButton.icon(
-                  onPressed: () {
-                    _onPress(context, 'RaisedButton.icon');
-                  },
-                  icon: Icon(Icons.language),
-                  label: Text('RaisedButton.icon'),
-                ),
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.red),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Text('RaisedButton RoundedRectangleBorder'),
-                  onPressed: () {
-                    _onPress(context, 'RaisedButton RoundedRectangleBorder');
-                  },
-                ),
-                RaisedButton(
-                  shape: StadiumBorder(),
-                  child: Text('RaisedButton StadiumBorder'),
-                  onPressed: () {
-                    _onPress(context, 'RaisedButton StadiumBorder');
-                  },
-                ),
-                FlatButton(
-                  child: Text('FlatButton'),
-                  splashColor: Colors.blue,
-                  highlightColor: Colors.transparent,
-                  onPressed: () {
-                    _onPress(context, 'FlatButton');
-                  },
-                ),
-                FlatButton.icon(
-                    onPressed: () {
-                      _onPress(context, 'FlatButton.icon');
-                    },
-                    icon: Icon(Icons.message),
-                    label: Text('FlatButton.icon')),
-                OutlineButton(
-                  child: Text('OutlineButton'),
-                  highlightColor: Colors.lime,
-                  onPressed: () {
-                    _onPress(context, 'OutlineButton');
-                  },
-                ),
-                OutlineButton(
-                  child: Text('OutlineButton shape'),
-                  shape: StadiumBorder(),
-                  highlightedBorderColor: Colors.redAccent,
-                  borderSide: BorderSide(color: Colors.green, width: 2),
-                  onPressed: () {
-                    _onPress(context, 'OutlineButton shape');
-                  },
-                ),
-                Container(
-                  color: Colors.lime,
-                  child: IconButton(
-                    icon: Icon(Icons.settings),
-                    color: Colors.pinkAccent,
-                    onPressed: () {
-                      _onPress(context, 'IconButton');
-                    },
-                  ),
-                ),
-                ButtonTheme(
-                  minWidth: 0,
-                  height: 0,
-                  padding: EdgeInsets.zero,
-                  highlightColor: Colors.lime,
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  child: FlatButton(
-                    child: Text('ButtonTheme'),
+            return SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Text('PopupMenuButton'),
+                  PopupMenuButton<Object>(
+                    // child: Text('PopupMenuButton'),
+                    offset: Offset(0, 200),
+                    tooltip: '选择器pop-up',
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Colors.orange)),
+                        // side: BorderSide(color: Colors.green),
+                        borderRadius: BorderRadius.circular(20)),
+                    onSelected: (value) {
+                      _onPress(context, "Menu button select $value");
+                    },
+                    onCanceled: () {
+                      _onPress(context,
+                          "Dismiss the popup menu without selecting an item");
+                    },
+                    initialValue: 2,
+                    itemBuilder: _renderMenuButtonItems,
+                  ),
+                  Container(
+                    width: 200,
+                    child: DropdownButton<String>(
+                      hint: Text('请选择'),
+                      value: _dropdownButtonValue,
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.redAccent,
+                      ),
+                      // 占满空间
+                      isExpanded: true,
+                      elevation: 16,
+                      items: [
+                        DropdownMenuItem(
+                          child: Text('DropdownButton-1'),
+                          value: 'DropdownButton-1',
+                        ),
+                        DropdownMenuItem(
+                            child: Text('DropdownButton-2'),
+                            value: 'DropdownButton-2'),
+                        DropdownMenuItem(
+                            child: Text('DropdownButton-3'),
+                            value: 'DropdownButton-3'),
+                      ],
+                      onChanged: (value) => setState(() {
+                        printError(value);
+                        _dropdownButtonValue = value;
+                      }),
+                    ),
+                  ),
+                  Divider(),
+                  RaisedButton(
+                    child: Text('RaisedButton'),
                     onPressed: () {
-                      _onPress(context, 'ButtonTheme');
+                      _onPress(context, 'RaisedButton');
                     },
                   ),
-                ),
-                Button(
-                  child: Text('Custom button'),
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(20),
-                  borderColor: Colors.pinkAccent,
-                  borderWidth: 0,
-                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                  onPressed: () {
-                    _onPress(context, 'Custom button');
-                  },
-                ),
-                Divider(
-                  height: 32,
-                ),
-                LikeButton(
-                  size: 64,
-                  animationDuration: Duration(seconds: 2),
-                  circleColor:
-                      CircleColor(start: Colors.cyan, end: Colors.yellow),
-                  bubblesSize: 120,
-                  bubblesColor: BubblesColor(
-                      dotPrimaryColor: Colors.redAccent,
-                      dotSecondaryColor: Colors.deepPurpleAccent),
-                  likeBuilder: (bool isLiked) => Icon(
-                    Icons.star,
-                    color: isLiked ? Colors.pink : Colors.grey,
-                    size: 64,
+                  RaisedButton(
+                    elevation: 0,
+                    highlightElevation: 0,
+                    child: Text('RaisedButton.withoutElevation'),
+                    onPressed: () {
+                      _onPress(context, 'RaisedButton.withoutElevation');
+                    },
                   ),
-                  onTap: (bool isLiked) async {
-                    print("old status $isLiked");
-                    return Future.delayed(Duration.zero, () {
-                      print("new status ${!isLiked}");
-                      return !isLiked;
-                    });
-                  },
-                ),
-              ],
+                  RaisedButton.icon(
+                    onPressed: () {
+                      _onPress(context, 'RaisedButton.icon');
+                    },
+                    icon: Icon(Icons.language),
+                    label: Text('RaisedButton.icon'),
+                  ),
+                  Divider(),
+                  Text(
+                    'Button shape',
+                    textScaleFactor: 2,
+                  ),
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.orangeAccent, width: 2)),
+                    child: Text('RoundedRectangleBorder'),
+                    onPressed: () {
+                      _onPress(context, 'RoundedRectangleBorder');
+                    },
+                  ),
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Text('RoundedRectangleBorder+borderRadius'),
+                    onPressed: () {
+                      _onPress(context, 'RoundedRectangleBorder+borderRadius');
+                    },
+                  ),
+                  RaisedButton(
+                    shape: StadiumBorder(),
+                    child: Text('StadiumBorder'),
+                    onPressed: () {
+                      _onPress(context, 'StadiumBorder');
+                    },
+                  ),
+                  RaisedButton(
+                    shape: StadiumBorder(
+                        side: BorderSide(color: Colors.redAccent)),
+                    child: Text('StadiumBorder+side'),
+                    onPressed: () {
+                      _onPress(context, 'StadiumBorder+side');
+                    },
+                  ),
+                  RaisedButton(
+                    shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Text('BeveledRectangleBorder'),
+                    onPressed: () {
+                      _onPress(context, 'BeveledRectangleBorder');
+                    },
+                  ),
+                  RaisedButton(
+                    shape: BeveledRectangleBorder(
+                        side: BorderSide(color: Colors.cyan),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Text('BeveledRectangleBorder+side'),
+                    onPressed: () {
+                      _onPress(context, 'BeveledRectangleBorder+side');
+                    },
+                  ),
+                  Divider(),
+                  FlatButton(
+                    child: Text('FlatButton'),
+                    splashColor: Colors.blue,
+                    highlightColor: Colors.transparent,
+                    onPressed: () {
+                      _onPress(context, 'FlatButton');
+                    },
+                  ),
+                  FlatButton.icon(
+                      onPressed: () {
+                        _onPress(context, 'FlatButton.icon');
+                      },
+                      icon: Icon(Icons.message),
+                      label: Text('FlatButton.icon')),
+                  OutlineButton(
+                    child: Text('OutlineButton'),
+                    highlightColor: Colors.lime,
+                    onPressed: () {
+                      _onPress(context, 'OutlineButton');
+                    },
+                  ),
+                  OutlineButton(
+                    child: Text('OutlineButton shape'),
+                    shape: StadiumBorder(),
+                    highlightedBorderColor: Colors.redAccent,
+                    borderSide: BorderSide(color: Colors.green, width: 2),
+                    onPressed: () {
+                      _onPress(context, 'OutlineButton shape');
+                    },
+                  ),
+                  Container(
+                    color: Colors.lime,
+                    child: IconButton(
+                      icon: Icon(Icons.settings),
+                      color: Colors.pinkAccent,
+                      onPressed: () {
+                        _onPress(context, 'IconButton');
+                      },
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 0,
+                    height: 0,
+                    padding: EdgeInsets.zero,
+                    highlightColor: Colors.lime,
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    child: FlatButton(
+                      child: Text('ButtonTheme'),
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(color: Colors.orange)),
+                      onPressed: () {
+                        _onPress(context, 'ButtonTheme');
+                      },
+                    ),
+                  ),
+                  Button(
+                    child: Text('Custom button'),
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(20),
+                    borderColor: Colors.pinkAccent,
+                    borderWidth: 0,
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                    onPressed: () {
+                      _onPress(context, 'Custom button');
+                    },
+                  ),
+                  Divider(
+                    height: 32,
+                  ),
+                  LikeButton(
+                    size: 64,
+                    animationDuration: Duration(seconds: 2),
+                    circleColor:
+                        CircleColor(start: Colors.cyan, end: Colors.yellow),
+                    bubblesSize: 120,
+                    bubblesColor: BubblesColor(
+                        dotPrimaryColor: Colors.redAccent,
+                        dotSecondaryColor: Colors.deepPurpleAccent),
+                    likeBuilder: (bool isLiked) => Icon(
+                      Icons.star,
+                      color: isLiked ? Colors.pink : Colors.grey,
+                      size: 64,
+                    ),
+                    onTap: (bool isLiked) async {
+                      print("old status $isLiked");
+                      return Future.delayed(Duration.zero, () {
+                        print("new status ${!isLiked}");
+                        return !isLiked;
+                      });
+                    },
+                  ),
+                ],
+              ),
             );
           },
         ),

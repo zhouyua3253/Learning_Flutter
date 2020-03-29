@@ -53,7 +53,7 @@ class AnimationPage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'Hero',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.body1,
                   ),
                   ClipOval(
                     child: Button(

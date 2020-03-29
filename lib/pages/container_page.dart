@@ -123,16 +123,16 @@ class _ContainerPageState extends State<ContainerPage> {
                   height: 100,
                 ),
               ),
-              Material(
-                elevation: 20,
-                borderRadius:
-                    BorderRadius.horizontal(left: Radius.circular(30)),
-                child: Image.asset(
-                  'images/1.jpg',
-                  fit: BoxFit.cover,
-                  width: 100,
-                  height: 100,
+              SizedBox(
+                height: 20,
+              ),
+              Text('shape: BoxShape.circle', textScaleFactor: 1.5),
+              Container(
+                child: FlutterLogo(
+                  size: 100,
                 ),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.redAccent),
               ),
               SizedBox(
                 height: 30,
