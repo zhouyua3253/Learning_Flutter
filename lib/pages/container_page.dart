@@ -112,7 +112,10 @@ class _ContainerPageState extends State<ContainerPage> {
               Divider(),
               Text('borderRadius 无法剪切 child'),
               Container(
-                child: Image.asset('images/5.jpg', fit: BoxFit.cover,),
+                child: Image.asset(
+                  'images/5.jpg',
+                  fit: BoxFit.cover,
+                ),
                 width: 200,
                 height: 100,
                 decoration:

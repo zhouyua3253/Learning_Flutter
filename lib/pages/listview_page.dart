@@ -35,7 +35,8 @@ class _ListViewPageState extends State<ListViewPage> {
 
   void _scrollToTop() {
     // _scrollController.jumpTo(0);
-    _scrollController.animateTo(0, duration: Duration(seconds: 2), curve: Curves.bounceInOut);
+    _scrollController.animateTo(0,
+        duration: Duration(seconds: 2), curve: Curves.bounceInOut);
   }
 
   @override
@@ -61,7 +62,8 @@ class _ListViewPageState extends State<ListViewPage> {
                       // All the children widgets will be rendered at the begining
                       Container(
                         color: Colors.orangeAccent,
-                        padding: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 50, horizontal: 10),
                         child: Text(
                             'RefreshIndicator + CupertinoScrollbar + ListView(\nchildren: <Widget>[])'),
                       ),
@@ -92,13 +94,14 @@ class _ListViewPageState extends State<ListViewPage> {
                   Container(
                       color: Colors.grey[300],
                       padding: EdgeInsets.all(5),
-                      child:
-                          Button(onPressed: _scrollToTop, child: Text('controller: 监听滑动\n点击滑到顶部'))),
+                      child: Button(
+                          onPressed: _scrollToTop,
+                          child: Text('controller: 监听滑动\n点击滑到顶部'))),
                   Expanded(
                       flex: 1,
                       child: CupertinoScrollbar(
                         child: ListView.builder(
-                            // Disable bounces
+                          // Disable bounces
                             physics: ClampingScrollPhysics(),
                             controller: _scrollController,
                             itemCount: _items.length,
@@ -131,8 +134,10 @@ class _ListViewPageState extends State<ListViewPage> {
     double scale = MediaQuery.of(context).devicePixelRatio;
     return Container(
       alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1 / scale))),
-      child: Text("ListView.builder()\nitemExtent: 指定高度\n自己渲染border-${_items[index]}"),
+      decoration:
+      BoxDecoration(border: Border(bottom: BorderSide(width: 1 / scale))),
+      child: Text(
+          "ListView.builder()\nitemExtent: 指定高度\n自己渲染border-${_items[index]}"),
     );
   }
 

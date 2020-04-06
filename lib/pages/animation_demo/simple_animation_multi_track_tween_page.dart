@@ -9,7 +9,9 @@ class SimpleAnimationMultiTrackTweenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('MultiTrackTween'),),
+        appBar: AppBar(
+          title: Text('MultiTrackTween'),
+        ),
         body: SafeArea(child: Center(child: buildAnimation())),
       ),
     );
@@ -26,6 +28,7 @@ class SimpleAnimationMultiTrackTweenPage extends StatelessWidget {
             ColorTween(begin: Colors.blue, end: Colors.green),
             curve: Curves.easeOut),
     Track("rotation")
+
         /// 延迟1s
         .add(Duration(seconds: 1), ConstantTween(0.0))
         .add(Duration(seconds: 2), Tween(begin: 0.0, end: pi),

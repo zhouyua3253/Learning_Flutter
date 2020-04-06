@@ -10,7 +10,11 @@ class InkWellPage extends StatelessWidget {
       body: Center(
         child: Builder(
           builder: (context) => InkWell(
-            child: Icon(Icons.ac_unit, size: 200, color: Colors.grey,),
+            child: Icon(
+              Icons.ac_unit,
+              size: 200,
+              color: Colors.grey,
+            ),
             splashColor: Colors.yellow,
             borderRadius: BorderRadius.circular(40),
             onTap: () => _onTap(context),

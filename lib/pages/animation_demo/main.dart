@@ -131,8 +131,7 @@ class AnimationPage extends StatelessWidget {
 
       case 'RouteTransition':
         Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) =>
-                RouteTransitionPage()));
+            builder: (BuildContext context) => RouteTransitionPage()));
         break;
     }
   }

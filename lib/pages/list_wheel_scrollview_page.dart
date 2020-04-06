@@ -13,8 +13,10 @@ class ListWheelScrollViewPage extends StatelessWidget {
         child: ListWheelScrollView(
           itemExtent: 80,
           children: _renderList(),
+
           /// 直径
           diameterRatio: 2,
+
           /// 偏移
           // offAxisFraction: -0.5,
           /// 放大器

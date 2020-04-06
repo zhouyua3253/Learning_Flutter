@@ -35,8 +35,7 @@ class _NetworkUtil {
   Future<T> post<T>(String path, {Map<String, dynamic> params}) async {
     try {
       Response response = await _dio.post(path,
-          data: params,
-          options: Options(headers: _createCustomHeaders()));
+          data: params, options: Options(headers: _createCustomHeaders()));
 
       if (response.statusCode != HttpStatus.ok) {
         throw DioError(error: 'Something goes wrong.');

@@ -32,7 +32,6 @@ class _DialogPageState extends State<DialogPage> {
       default:
         return showModalBottomSheet;
     }
-
   }
 
   List<Widget> _renderRadioGroup() {
@@ -160,7 +159,9 @@ class _DialogPageState extends State<DialogPage> {
       ],
     );
 
-    String option = (await _mShowDialog(context: context, builder: (_) => dialog) as String);
+    String option =
+        (await _mShowDialog(context: context, builder: (_) => dialog)
+            as String);
     _displaySnackBar(option);
   }
 
@@ -188,7 +189,9 @@ class _DialogPageState extends State<DialogPage> {
 
     /// Future<result> comes from Navigator.of(context).pop(result);
     String result = (await _mShowDialog(
-        context: context, barrierDismissible: cancelAble, builder: (context) => dialog) as String);
+        context: context,
+        barrierDismissible: cancelAble,
+        builder: (context) => dialog) as String);
     _displaySnackBar(result);
   }
 
@@ -215,7 +218,8 @@ class _DialogPageState extends State<DialogPage> {
     );
 
     /// String name comes from Navigator.of(context).pop(controller.text);
-    String name = (await _mShowDialog(context: context, builder: (_) => dialog) as String);
+    String name = (await _mShowDialog(context: context, builder: (_) => dialog)
+    as String);
     print("Input value is $name");
 
     _displaySnackBar(name);
@@ -305,7 +309,8 @@ class _DialogPageState extends State<DialogPage> {
           isDestructiveAction: true),
     );
 
-    String type = (await _mShowDialog(context: context, builder: (_) => node) as String);
+    String type =
+    (await _mShowDialog(context: context, builder: (_) => node) as String);
     _displaySnackBar(type);
   }
 

@@ -12,7 +12,7 @@ class _OpacityPageState extends State<OpacityPage> {
 
   _changeOpacityValue() {
     this.setState(() {
-	    _opacityValue = Random().nextDouble();
+      _opacityValue = Random().nextDouble();
     });
   }
 

@@ -28,7 +28,8 @@ class _GoogleNavBarPageState extends State<GoogleNavBarPage> {
         children: <Widget>[
           PageView(
             physics: ClampingScrollPhysics(),
-            children: _bgColors.map((color) => Container(color: color)).toList(),
+            children:
+                _bgColors.map((color) => Container(color: color)).toList(),
             onPageChanged: (index) {
               setState(() {
                 _selectedIndex = index;

@@ -27,7 +27,10 @@ class BlurPage extends StatelessWidget {
                   height: 200,
                   color: Colors.cyan.withOpacity(0.3),
                   alignment: Alignment.center,
-                  child: Text('遮罩前置组件', textScaleFactor: 1.5,),
+                  child: Text(
+                    '遮罩前置组件',
+                    textScaleFactor: 1.5,
+                  ),
                 ),
               ),
             ),

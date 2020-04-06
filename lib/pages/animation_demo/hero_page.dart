@@ -6,7 +6,9 @@ class HeroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Hero transition'),),
+      appBar: AppBar(
+        title: Text('Hero transition'),
+      ),
       body: SafeArea(
         child: Container(
           alignment: Alignment.topCenter,

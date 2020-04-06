@@ -48,7 +48,8 @@ class _StackPageState extends State<StackPage> {
                 top: 20,
                 left: 100,
                 right: 100,
-                child: Text("alignment决定了没有Positioned指定横竖位置的子控件的排列位置\n默认topStart"),
+                child:
+                    Text("alignment决定了没有Positioned指定横竖位置的子控件的排列位置\n默认topStart"),
               ),
               AnimatedPositioned(
                 top: _top,

@@ -74,24 +74,24 @@ class SwiperPage extends StatelessWidget {
               layout: SwiperLayout.STACK,
             ),
           ),
-	        Divider(),
-	        Container(
-		        width: double.infinity,
-		        height: 250,
-		        child: Swiper(
-			        itemBuilder: (BuildContext context, int index) => ClipRRect(
-				        borderRadius: BorderRadius.circular(20),
-				        child: Image.network(
-					        _imgUrls[index],
-					        fit: BoxFit.cover,
-				        ),
-			        ),
-			        itemCount: _imgUrls.length,
-			        itemWidth: MediaQuery.of(context).size.width - 40,
-			        itemHeight: 240,
-			        layout: SwiperLayout.TINDER,
-		        ),
-	        ),
+          Divider(),
+          Container(
+            width: double.infinity,
+            height: 250,
+            child: Swiper(
+              itemBuilder: (BuildContext context, int index) => ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  _imgUrls[index],
+                  fit: BoxFit.cover,
+                ),
+              ),
+              itemCount: _imgUrls.length,
+              itemWidth: MediaQuery.of(context).size.width - 40,
+              itemHeight: 240,
+              layout: SwiperLayout.TINDER,
+            ),
+          ),
         ],
       ),
     );

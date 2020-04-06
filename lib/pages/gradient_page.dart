@@ -42,16 +42,11 @@ class GradientPage extends StatelessWidget {
                     fontSize: 20),
               ),
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                      radius: 0.6,
-                      /// 渲染模式
-                      // tileMode: TileMode.mirror,
-                      colors: [
-                    Colors.purple,
-                    Colors.orange,
-                    Colors.greenAccent
-                  ])),
+              decoration: BoxDecoration(gradient: RadialGradient(radius: 0.6,
+
+                  /// 渲染模式
+                  // tileMode: TileMode.mirror,
+                  colors: [Colors.purple, Colors.orange, Colors.greenAccent])),
             ),
           )
         ],

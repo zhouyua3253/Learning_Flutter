@@ -11,7 +11,10 @@ class GridViewPage extends StatelessWidget {
     /// 指定横轴上子元素的个数
     SliverGridDelegateWithFixedCrossAxisCount _crossAxisCountDelegate =
         SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 20, childAspectRatio: 0.8);
+            crossAxisCount: 2,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 20,
+            childAspectRatio: 0.8);
 
     /// 指定横轴上子元素的最大长度
     SliverGridDelegateWithMaxCrossAxisExtent _maxCrossAxisDelegate =

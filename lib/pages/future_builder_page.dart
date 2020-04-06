@@ -30,7 +30,10 @@ class FutureBuilderPage extends StatelessWidget {
     /// show default initialData
     if (snapshot.hasData) {
       // AsyncSnapshot<String>(ConnectionState.waiting, The first time loading..., null)
-      return Text(snapshot.data, textScaleFactor: 1.3,);
+      return Text(
+        snapshot.data,
+        textScaleFactor: 1.3,
+      );
     } else if (snapshot.hasError) {
       // AsyncSnapshot<String>(ConnectionState.done, null, FormatException: Something goes wrong.)
       return Text(
@@ -39,7 +42,7 @@ class FutureBuilderPage extends StatelessWidget {
             color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20),
       );
     } else {
-       return CircularProgressIndicator();
+      return CircularProgressIndicator();
     }
   }
 

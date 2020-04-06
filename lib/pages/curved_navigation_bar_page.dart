@@ -15,7 +15,10 @@ class CurvedNavigationBarPage extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         alignment: Alignment.center,
-        child: Text('Content', textScaleFactor: 2,),
+        child: Text(
+          'Content',
+          textScaleFactor: 2,
+        ),
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),

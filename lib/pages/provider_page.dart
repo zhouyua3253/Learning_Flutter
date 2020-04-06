@@ -57,7 +57,7 @@ class ProviderFirstPage extends StatelessWidget {
     Provider.of<CounterStore>(context, listen: false).add(10);
   }
 
-  void _onAddTimeStamp(BuildContext context)async  {
+  void _onAddTimeStamp(BuildContext context) async {
     print('async func start');
     await Provider.of<UserStore>(context, listen: false).addTimeStamps();
     print('async func end');

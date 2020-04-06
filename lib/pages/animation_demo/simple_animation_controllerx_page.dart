@@ -68,9 +68,9 @@ class _SimpleAnimationControllerXPageState
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                width: _sizeAnimation.value,
-                height: _sizeAnimation.value,
-                color: Colors.redAccent,
+              width: _sizeAnimation.value,
+              height: _sizeAnimation.value,
+              color: Colors.redAccent,
             ),
             Button(
               child: Text('STOP'),

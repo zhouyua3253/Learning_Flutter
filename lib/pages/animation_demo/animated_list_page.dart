@@ -53,14 +53,17 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
   }
 
   void _removeItem() {
-    _animatedListKey.currentState
-        .removeItem(_initialItemCount, (context, animation) {
-          return RotationTransition(turns: animation, child: ListTile(
-            leading: FlutterLogo(),
-            title: Text("index-$_initialItemCount"),
-          ),);
+    _animatedListKey.currentState.removeItem(_initialItemCount,
+        (context, animation) {
+      return RotationTransition(
+        turns: animation,
+        child: ListTile(
+          leading: FlutterLogo(),
+          title: Text("index-$_initialItemCount"),
+        ),
+      );
     });
 
-    _initialItemCount-= 1;
+    _initialItemCount -= 1;
   }
 }

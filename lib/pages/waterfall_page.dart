@@ -4,17 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WaterfallPage extends StatelessWidget {
-  final List<Map<String, int>> _items =
-      List.generate(10, (index) => {'index': index, 'height': Random().nextInt(100) + 50});
+  final List<Map<String, int>> _items = List.generate(
+      10, (index) => {'index': index, 'height': Random().nextInt(100) + 50});
 
   @override
   Widget build(BuildContext context) {
-    SliverWaterfallFlowDelegate _waterfallDelegate = SliverWaterfallFlowDelegate(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        viewportBuilder: _visibleItemsCallback,
-        lastChildLayoutTypeBuilder: _childLayoutType);
+    SliverWaterfallFlowDelegate _waterfallDelegate =
+        SliverWaterfallFlowDelegate(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            viewportBuilder: _visibleItemsCallback,
+            lastChildLayoutTypeBuilder: _childLayoutType);
 
     return Material(
       child: SafeArea(
@@ -30,8 +31,9 @@ class WaterfallPage extends StatelessWidget {
 
   Container _renderItem(BuildContext context, int index) {
     Color color = index == _items.length - 1 ? Colors.cyan : Colors.orange;
-    String content =
-        index == _items.length - 1 ? "LastChildLayoutType.\nfullCrossAxisExtend" : "Index - $index";
+    String content = index == _items.length - 1
+        ? "LastChildLayoutType.\nfullCrossAxisExtend"
+        : "Index - $index";
     return Container(
       height: _items[index]['height'].toDouble(),
       color: color,

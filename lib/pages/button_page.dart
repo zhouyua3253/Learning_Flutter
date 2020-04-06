@@ -191,13 +191,12 @@ class _ButtonPageState extends State<ButtonPage> {
                   Container(
                     color: Colors.grey,
                     child: IconButton(
-                      icon: Icon(Icons.camera),
-                      iconSize: 40,
-                      color: Colors.lime,
-                      onPressed: () {
-                        _onPress(context, 'IconButton');
-                      }
-                    ),
+                        icon: Icon(Icons.camera),
+                        iconSize: 40,
+                        color: Colors.lime,
+                        onPressed: () {
+                          _onPress(context, 'IconButton');
+                        }),
                   ),
                   Divider(),
                   ButtonTheme(

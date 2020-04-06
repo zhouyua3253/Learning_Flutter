@@ -91,7 +91,10 @@ class PickerPage extends StatelessWidget {
     DateTime lastDate = today.add(Duration(days: 30));
 
     DateTime date = await showDatePicker(
-        context: context, initialDate: DateTime.now(), firstDate: firstDate, lastDate: lastDate);
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: firstDate,
+        lastDate: lastDate);
     print("Material date $date");
   }
 
@@ -156,35 +159,36 @@ class PickerPage extends StatelessWidget {
   }
 
   void _showCustomMaterialPicker(BuildContext context) {
-    SimpleDialog dialog = SimpleDialog(title: Text('Please choose one option!'), children: [
-	    ListTile(
-		    title: Text("option 1"),
-		    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-		    onTap: () {
-			    print('click option 1');
-		    },
-	    ),
+    SimpleDialog dialog =
+        SimpleDialog(title: Text('Please choose one option!'), children: [
+      ListTile(
+        title: Text("option 1"),
+        contentPadding: EdgeInsets.symmetric(horizontal: 30),
+        onTap: () {
+          print('click option 1');
+        },
+      ),
       ListTile(
         title: Text("option 2"),
-	  contentPadding: EdgeInsets.symmetric(horizontal: 30),
+        contentPadding: EdgeInsets.symmetric(horizontal: 30),
         onTap: () {
           print('click option 2');
         },
       ),
-	    ListTile(
-		    title: Text("option 3"),
-		    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-		    onTap: () {
-			    print('click option 3');
-		    },
-	    ),
-	    ListTile(
-		    title: Text("option 4"),
-		    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-		    onTap: () {
-			    print('click option 4');
-		    },
-	    )
+      ListTile(
+        title: Text("option 3"),
+        contentPadding: EdgeInsets.symmetric(horizontal: 30),
+        onTap: () {
+          print('click option 3');
+        },
+      ),
+      ListTile(
+        title: Text("option 4"),
+        contentPadding: EdgeInsets.symmetric(horizontal: 30),
+        onTap: () {
+          print('click option 4');
+        },
+      )
     ]);
 
     showDialog(context: context, builder: (_) => dialog);

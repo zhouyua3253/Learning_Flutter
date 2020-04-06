@@ -21,13 +21,18 @@ class TransformPage extends StatelessWidget {
               RotatedBox(
                   child: Container(
                     color: Colors.deepPurpleAccent[100],
-                    child: Text('RotatedBox', textScaleFactor: 1.5,),
+                    child: Text(
+                      'RotatedBox',
+                      textScaleFactor: 1.5,
+                    ),
                     padding: EdgeInsets.all(16),
                   ),
                   quarterTurns: 1),
               Divider(),
               Text('Transform的变换是应用在绘制阶段\n不是应用在布局(layout)阶段'),
-              SizedBox(height: 16,),
+              SizedBox(
+                height: 16,
+              ),
               Transform(
                 transform: Matrix4.skewX(0.3),
                 child: Container(

@@ -28,11 +28,12 @@ class _ColorTweenPageState extends State<ColorTweenPage>
     _animationController =
         AnimationController(duration: Duration(seconds: 2), vsync: this);
 
-    _colorTweenAnimation = ColorTween(begin: Colors.yellow, end: Colors.black.withOpacity(0.5))
-        .animate(_animationController)
-          ..addStatusListener((AnimationStatus status) {
-            print("status -> $status");
-          });
+    _colorTweenAnimation =
+        ColorTween(begin: Colors.yellow, end: Colors.black.withOpacity(0.5))
+            .animate(_animationController)
+              ..addStatusListener((AnimationStatus status) {
+                print("status -> $status");
+              });
   }
 
   dispose() {

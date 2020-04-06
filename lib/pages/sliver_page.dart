@@ -4,13 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SliverPage extends StatelessWidget {
-  final List<Map<String, int>> _items =
-      List.generate(6, (index) => {'index': index, 'height': Random().nextInt(100) + 40});
+  final List<Map<String, int>> _items = List.generate(
+      6, (index) => {'index': index, 'height': Random().nextInt(100) + 40});
 
   @override
   Widget build(BuildContext context) {
     SliverChildBuilderDelegate _sliverFixedExtentBuildDelegate =
-        SliverChildBuilderDelegate(_renderListFixedExtentItem, childCount: _items.length);
+        SliverChildBuilderDelegate(_renderListFixedExtentItem,
+            childCount: _items.length);
     SliverChildBuilderDelegate _sliverBuildDelegate =
         SliverChildBuilderDelegate(_renderListItem, childCount: _items.length);
 
@@ -36,7 +37,10 @@ class SliverPage extends StatelessWidget {
                   centerTitle: true,
 
                   /// 向下拉伸放大时的效果
-                  stretchModes: [StretchMode.zoomBackground, StretchMode.fadeTitle],
+                  stretchModes: [
+                    StretchMode.zoomBackground,
+                    StretchMode.fadeTitle
+                  ],
                   background: Image.asset(
                     'images/3.jpg',
                     fit: BoxFit.cover,
@@ -50,7 +54,8 @@ class SliverPage extends StatelessWidget {
                   child: Text(
                     'SliverToBoxAdapter()\ncontains a single box widget',
                     textScaleFactor: 1.3,
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   height: 120,
                   alignment: Alignment.center,
@@ -70,14 +75,16 @@ class SliverPage extends StatelessWidget {
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
                     childAspectRatio: 2,
-                    children: _renderGridChildren(Colors.cyan, 'SliverGrid.count')),
+                    children:
+                    _renderGridChildren(Colors.cyan, 'SliverGrid.count')),
               ),
               SliverGrid.extent(
                   maxCrossAxisExtent: 250,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   childAspectRatio: 2,
-                  children: _renderGridChildren(Colors.yellow, 'SliverGrid.extent')),
+                  children:
+                  _renderGridChildren(Colors.yellow, 'SliverGrid.extent')),
             ],
           ),
         ),
@@ -97,7 +104,8 @@ class SliverPage extends StatelessWidget {
     return Container(
       height: _items[index]['height'].toDouble(),
       alignment: Alignment.center,
-      decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.grey))),
+      decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(width: 0.5, color: Colors.grey))),
       child: Text("$index - SliverList()\nchildren have different extent"),
     );
   }

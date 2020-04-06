@@ -60,6 +60,7 @@ class _ScrollViewPageState extends State<ScrollViewPage> {
               Divider(),
               Expanded(
                 flex: 1,
+
                 /// 当显式指定模板参数时，NotificationListener 便只会接收该参数类型的通知
                 child: NotificationListener<ScrollNotification>(
                   onNotification: (event) {

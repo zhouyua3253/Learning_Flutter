@@ -47,7 +47,8 @@ class _TextFieldPageState extends State<TextFieldPage> {
               // autofocus: true,
               maxLines: 2,
               decoration: InputDecoration(
-                  hintText: 'Max Lines = 2, contentPadding = 0', contentPadding: EdgeInsets.zero),
+                  hintText: 'Max Lines = 2, contentPadding = 0',
+                  contentPadding: EdgeInsets.zero),
             ),
           ),
           Divider(),
@@ -126,7 +127,8 @@ class _TextFieldPageState extends State<TextFieldPage> {
           Container(
             color: Colors.grey[200],
             child: TextField(
-                decoration: InputDecoration.collapsed(hintText: 'InputDecoration.collapsed')),
+                decoration: InputDecoration.collapsed(
+                    hintText: 'InputDecoration.collapsed')),
           ),
           Divider(),
           Text('With outline border'),
@@ -147,7 +149,8 @@ class _TextFieldPageState extends State<TextFieldPage> {
                       borderSide: BorderSide(color: Colors.green, width: 5),
                       borderRadius: BorderRadius.circular(20)),
                   focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.redAccent, width: 2))),
+                      borderSide:
+                          BorderSide(color: Colors.redAccent, width: 2))),
             ),
           ),
           Divider(),
@@ -160,7 +163,8 @@ class _TextFieldPageState extends State<TextFieldPage> {
               obscureText: true,
               maxLength: 6,
               style: TextStyle(fontSize: 24, color: Colors.purple),
-              decoration: InputDecoration.collapsed(hintText: 'Custom textfield, password'),
+              decoration: InputDecoration.collapsed(
+                  hintText: 'Custom textfield, password'),
               textInputAction: TextInputAction.join,
               onEditingComplete: () => print('onEditingComplete'),
               onSubmitted: (value) => print('onSubmitted -> $value'),
