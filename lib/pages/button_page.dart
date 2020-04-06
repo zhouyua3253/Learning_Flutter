@@ -19,7 +19,7 @@ class _ButtonPageState extends State<ButtonPage> {
       appBar: AppBar(
         title: Text('Button'),
       ),
-      body: Center(
+      body: SafeArea(
         child: Builder(
           builder: (context) {
             return SingleChildScrollView(
@@ -180,20 +180,30 @@ class _ButtonPageState extends State<ButtonPage> {
                       _onPress(context, 'OutlineButton shape');
                     },
                   ),
+                  Text('IconButton'),
+                  IconButton(
+                    icon: Icon(Icons.settings),
+                    color: Colors.pinkAccent,
+                    onPressed: () {
+                      _onPress(context, 'IconButton');
+                    },
+                  ),
                   Container(
-                    color: Colors.lime,
+                    color: Colors.grey,
                     child: IconButton(
-                      icon: Icon(Icons.settings),
-                      color: Colors.pinkAccent,
+                      icon: Icon(Icons.camera),
+                      iconSize: 40,
+                      color: Colors.lime,
                       onPressed: () {
                         _onPress(context, 'IconButton');
-                      },
+                      }
                     ),
                   ),
+                  Divider(),
                   ButtonTheme(
                     minWidth: 0,
                     height: 0,
-                    padding: EdgeInsets.zero,
+                    padding: const EdgeInsets.all(16),
                     highlightColor: Colors.lime,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     child: FlatButton(
@@ -215,9 +225,6 @@ class _ButtonPageState extends State<ButtonPage> {
                     onPressed: () {
                       _onPress(context, 'Custom button');
                     },
-                  ),
-                  Divider(
-                    height: 32,
                   ),
                   LikeButton(
                     size: 64,

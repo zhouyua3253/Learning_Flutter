@@ -14,6 +14,7 @@ import 'package:flutter_tutorial/pages/google_nav_bar_page.dart';
 import 'package:flutter_tutorial/pages/gradient_page.dart';
 import 'package:flutter_tutorial/pages/gridview_page.dart';
 import 'package:flutter_tutorial/pages/home_page.dart';
+import 'package:flutter_tutorial/pages/html_js_page.dart';
 import 'package:flutter_tutorial/pages/image_page.dart';
 import 'package:flutter_tutorial/pages/inkwell_pae.dart';
 import 'package:flutter_tutorial/pages/line_icon_page.dart';
@@ -116,6 +117,7 @@ MaterialApp app = MaterialApp(
     "/${StreamBuilderPage.routeName}": (context) => StreamBuilderPage(),
     "/${NetworkPage.routeName}": (context) => NetworkPage(),
     "/${ProviderFirstPage.routeName}": (context) => ProviderFirstPage(),
+    "/${HtmlJsPage.routeName}": (context) => HtmlJsPage(),
     "/${SystemApiPage.routeName}": (context) => SystemApiPage(),
   },
   theme: ThemeData(

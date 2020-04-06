@@ -101,9 +101,6 @@ class _ContainerPageState extends State<ContainerPage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(
-                height: 30,
-              ),
               Text('Material: 使用elevation实现阴影效果\nborderRadius实现圆角，无法剪切child'),
               Material(
                 elevation: 20,
@@ -112,17 +109,33 @@ class _ContainerPageState extends State<ContainerPage> {
                 color: Colors.cyan,
                 child: Container(width: 100, height: 100),
               ),
-              Material(
-                elevation: 20,
-                borderRadius:
-                    BorderRadius.horizontal(left: Radius.circular(30)),
-                child: Image.asset(
-                  'images/1.jpg',
-                  fit: BoxFit.cover,
-                  width: 100,
-                  height: 100,
-                ),
+              Divider(),
+              Text('borderRadius 无法剪切 child'),
+              Container(
+                child: Image.asset('images/5.jpg', fit: BoxFit.cover,),
+                width: 200,
+                height: 100,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
               ),
+              Text('borderRadius 剪切 BoxDecoration.image'),
+              Container(
+                  width: 200,
+                  height: 100,
+                  alignment: Alignment.center,
+                  child: Text(
+                    'BoxDecoration\nimage',
+                    textAlign: TextAlign.center,
+                    textScaleFactor: 1.65,
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.horizontal(left: Radius.circular(30)),
+                      image: DecorationImage(
+                          image: AssetImage('images/3.jpg'),
+                          fit: BoxFit.cover))),
               SizedBox(
                 height: 20,
               ),

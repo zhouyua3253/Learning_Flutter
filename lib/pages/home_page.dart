@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/customWidget/button.dart';
 import 'package:flutter_tutorial/pages/blurhash_page.dart';
 import 'package:flutter_tutorial/pages/button_page.dart';
 import 'package:flutter_tutorial/pages/future_builder_page.dart';
 import 'package:flutter_tutorial/pages/global_notification_page.dart';
+import 'package:flutter_tutorial/pages/html_js_page.dart';
 import 'package:flutter_tutorial/pages/line_icon_page.dart';
 import 'package:flutter_tutorial/pages/list_wheel_scrollview_page.dart';
 import 'package:flutter_tutorial/pages/network_page.dart';
@@ -71,6 +71,7 @@ class HomePage extends StatelessWidget {
     FutureBuilderPage.routeName,
     StreamBuilderPage.routeName,
     ProviderFirstPage.routeName,
+    HtmlJsPage.routeName,
     NetworkPage.routeName,
     SystemApiPage.routeName
   ];

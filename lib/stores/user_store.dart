@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class UserStore with ChangeNotifier {
+class UserStore extends ChangeNotifier {
   List<DateTime> _timeStamps = [];
 
   Future<void> addTimeStamps() async {
