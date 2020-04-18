@@ -10,12 +10,7 @@ class GoogleNavBarPage extends StatefulWidget {
 }
 
 class _GoogleNavBarPageState extends State<GoogleNavBarPage> {
-  final List<Color> _bgColors = [
-    Colors.orange,
-    Colors.cyan,
-    Colors.deepPurple,
-    Colors.redAccent
-  ];
+  final List<Color> _bgColors = [Colors.orange, Colors.cyan, Colors.deepPurple, Colors.redAccent];
 
   int _selectedIndex = 0;
 
@@ -28,8 +23,7 @@ class _GoogleNavBarPageState extends State<GoogleNavBarPage> {
         children: <Widget>[
           PageView(
             physics: ClampingScrollPhysics(),
-            children:
-                _bgColors.map((color) => Container(color: color)).toList(),
+            children: _bgColors.map((color) => Container(color: color)).toList(),
             onPageChanged: (index) {
               setState(() {
                 _selectedIndex = index;
@@ -54,8 +48,7 @@ class _GoogleNavBarPageState extends State<GoogleNavBarPage> {
                         backgroundColor: Colors.blueGrey,
                         tabBackgroundColor: Colors.redAccent[200],
                         // Tab content padding
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                         duration: Duration(milliseconds: 500),
                         tabs: [
                           GButton(
@@ -97,13 +90,10 @@ class _GoogleNavBarPageState extends State<GoogleNavBarPage> {
                           // active icon color
                           activeColor: _bgColors[_selectedIndex],
                           iconSize: 28,
-                          textStyle: TextStyle(
-                              fontSize: 20, color: _bgColors[_selectedIndex]),
-                          tabBackgroundColor:
-                              _bgColors[_selectedIndex].withOpacity(0.2),
+                          textStyle: TextStyle(fontSize: 20, color: _bgColors[_selectedIndex]),
+                          tabBackgroundColor: _bgColors[_selectedIndex].withOpacity(0.2),
                           // Tab content padding
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                           duration: Duration(milliseconds: 500),
                           tabs: [
                             GButton(

@@ -18,5 +18,5 @@ class CounterStore with ChangeNotifier {
     notifyListeners();
   }
 
-  get count => _count;
+  int get count => _count;
 }

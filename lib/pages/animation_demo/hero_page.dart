@@ -12,8 +12,7 @@ class HeroPage extends StatelessWidget {
       body: SafeArea(
         child: Container(
           alignment: Alignment.topCenter,
-          child:
-              Hero(tag: HeroPage.heroTag, child: Image.asset('images/6.jpg')),
+          child: Hero(tag: HeroPage.heroTag, child: Image.asset('images/6.jpg')),
         ),
       ),
     );

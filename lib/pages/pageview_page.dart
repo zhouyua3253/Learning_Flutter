@@ -76,8 +76,7 @@ class PageViewPage extends StatelessWidget {
               ),
               Text('PageView.builder'),
               Expanded(
-                child: PageView.builder(
-                    itemCount: _pageViews.length, itemBuilder: _itemBuilder),
+                child: PageView.builder(itemCount: _pageViews.length, itemBuilder: _itemBuilder),
               )
             ],
           ),

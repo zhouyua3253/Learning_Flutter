@@ -22,8 +22,7 @@ class AnimatedIconPage extends StatefulWidget {
   _AnimatedIconPageState createState() => _AnimatedIconPageState();
 }
 
-class _AnimatedIconPageState extends State<AnimatedIconPage>
-    with SingleTickerProviderStateMixin {
+class _AnimatedIconPageState extends State<AnimatedIconPage> with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   SliverGridDelegate _gridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
@@ -33,8 +32,7 @@ class _AnimatedIconPageState extends State<AnimatedIconPage>
   void initState() {
     super.initState();
 
-    _controller =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
+    _controller = AnimationController(duration: Duration(seconds: 1), vsync: this);
   }
 
   @override

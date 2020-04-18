@@ -6,12 +6,10 @@ class ScrollablePositionedListPage extends StatefulWidget {
   static String routeName = 'PositionedList';
 
   @override
-  _ScrollablePositionedListPageState createState() =>
-      _ScrollablePositionedListPageState();
+  _ScrollablePositionedListPageState createState() => _ScrollablePositionedListPageState();
 }
 
-class _ScrollablePositionedListPageState
-    extends State<ScrollablePositionedListPage> {
+class _ScrollablePositionedListPageState extends State<ScrollablePositionedListPage> {
   final _itemScrollController = ItemScrollController();
   final _itemPositionsListener = ItemPositionsListener.create();
 
@@ -57,8 +55,7 @@ class _ScrollablePositionedListPageState
               children: <Widget>[
                 RaisedButton(child: Text('Jump to 999'), onPressed: _jumpTo),
                 SizedBox(width: 30),
-                RaisedButton(
-                    child: Text('Scroll to 3456'), onPressed: _scrollTo),
+                RaisedButton(child: Text('Scroll to 3456'), onPressed: _scrollTo),
               ],
             ),
           ],
@@ -73,9 +70,7 @@ class _ScrollablePositionedListPageState
 
   void _scrollTo() {
     _itemScrollController.scrollTo(
-        index: 3456,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.easeInOut);
+        index: 3456, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
 
   void _listenVisibleItems() {

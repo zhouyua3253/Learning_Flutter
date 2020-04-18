@@ -37,8 +37,7 @@ class _ButtonPageState extends State<ButtonPage> {
                       _onPress(context, "Menu button select $value");
                     },
                     onCanceled: () {
-                      _onPress(context,
-                          "Dismiss the popup menu without selecting an item");
+                      _onPress(context, "Dismiss the popup menu without selecting an item");
                     },
                     initialValue: 2,
                     itemBuilder: _renderMenuButtonItems,
@@ -61,11 +60,9 @@ class _ButtonPageState extends State<ButtonPage> {
                           value: 'DropdownButton-1',
                         ),
                         DropdownMenuItem(
-                            child: Text('DropdownButton-2'),
-                            value: 'DropdownButton-2'),
+                            child: Text('DropdownButton-2'), value: 'DropdownButton-2'),
                         DropdownMenuItem(
-                            child: Text('DropdownButton-3'),
-                            value: 'DropdownButton-3'),
+                            child: Text('DropdownButton-3'), value: 'DropdownButton-3'),
                       ],
                       onChanged: (value) => setState(() {
                         printError(value);
@@ -125,16 +122,14 @@ class _ButtonPageState extends State<ButtonPage> {
                     },
                   ),
                   RaisedButton(
-                    shape: StadiumBorder(
-                        side: BorderSide(color: Colors.redAccent)),
+                    shape: StadiumBorder(side: BorderSide(color: Colors.redAccent)),
                     child: Text('StadiumBorder+side'),
                     onPressed: () {
                       _onPress(context, 'StadiumBorder+side');
                     },
                   ),
                   RaisedButton(
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                    shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     child: Text('BeveledRectangleBorder'),
                     onPressed: () {
                       _onPress(context, 'BeveledRectangleBorder');
@@ -207,8 +202,7 @@ class _ButtonPageState extends State<ButtonPage> {
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     child: FlatButton(
                       child: Text('ButtonTheme'),
-                      shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.orange)),
+                      shape: RoundedRectangleBorder(side: BorderSide(color: Colors.orange)),
                       onPressed: () {
                         _onPress(context, 'ButtonTheme');
                       },
@@ -228,8 +222,7 @@ class _ButtonPageState extends State<ButtonPage> {
                   LikeButton(
                     size: 64,
                     animationDuration: Duration(seconds: 2),
-                    circleColor:
-                        CircleColor(start: Colors.cyan, end: Colors.yellow),
+                    circleColor: CircleColor(start: Colors.cyan, end: Colors.yellow),
                     bubblesSize: 120,
                     bubblesColor: BubblesColor(
                         dotPrimaryColor: Colors.redAccent,

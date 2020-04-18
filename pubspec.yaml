@@ -43,8 +43,8 @@ dependencies:
   page_transition: 1.1.5
   like_button: 0.2.0
   logger: 0.8.3
-  feature_discovery: 0.8.0
   universal_html: 1.1.20
+  provider_architecture: 1.0.6
 
 dev_dependencies:
   flutter_test:

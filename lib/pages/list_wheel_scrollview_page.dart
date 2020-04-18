@@ -36,8 +36,7 @@ class ListWheelScrollViewPage extends StatelessWidget {
               margin: EdgeInsets.all(5),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: Colors.redAccent[100],
-                  borderRadius: BorderRadius.circular(10)),
+                  color: Colors.redAccent[100], borderRadius: BorderRadius.circular(10)),
             ))
         .toList();
   }

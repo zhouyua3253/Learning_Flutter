@@ -8,8 +8,7 @@ class DismissiblePage extends StatefulWidget {
 }
 
 class _DismissiblePageState extends State<DismissiblePage> {
-  List<String> _itemsData =
-      List<String>.generate(200, (index) => "ListView-${index}");
+  List<String> _itemsData = List<String>.generate(200, (index) => "ListView-${index}");
 
   @override
   Widget build(BuildContext context) {

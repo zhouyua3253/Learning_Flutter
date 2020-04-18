@@ -7,8 +7,7 @@ class ScaffoldPage extends StatefulWidget {
   _ScaffoldPageState createState() => _ScaffoldPageState();
 }
 
-class _ScaffoldPageState extends State<ScaffoldPage>
-    with SingleTickerProviderStateMixin {
+class _ScaffoldPageState extends State<ScaffoldPage> with SingleTickerProviderStateMixin {
   final List _navigationItems = [
     {"title": 'Home', "icon": Icon(Icons.home)},
     {"title": 'Stats', "icon": Icon(Icons.show_chart)},
@@ -57,8 +56,7 @@ class _ScaffoldPageState extends State<ScaffoldPage>
       ..addListener(() {
         // 点击选项卡切换时打印了2次
         int index = _tabController.index;
-        String info =
-            "tab index -> $index, indexIsChanging -> ${_tabController.indexIsChanging}";
+        String info = "tab index -> $index, indexIsChanging -> ${_tabController.indexIsChanging}";
         print(info);
 
         if (_activeIndex != index) {
@@ -194,8 +192,9 @@ class _ScaffoldPageState extends State<ScaffoldPage>
                 ],
               ),
               color: Colors.blueGrey,
+              // 圆形凹口
               shape: CircularNotchedRectangle(),
-            ),
+              notchMargin: 4),
     );
   }
 

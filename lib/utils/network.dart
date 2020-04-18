@@ -34,8 +34,8 @@ class _NetworkUtil {
 
   Future<T> post<T>(String path, {Map<String, dynamic> params}) async {
     try {
-      Response response = await _dio.post(path,
-          data: params, options: Options(headers: _createCustomHeaders()));
+      Response response =
+          await _dio.post(path, data: params, options: Options(headers: _createCustomHeaders()));
 
       if (response.statusCode != HttpStatus.ok) {
         throw DioError(error: 'Something goes wrong.');
@@ -61,8 +61,7 @@ class _NetworkUtil {
   }
 
   void _addInterceptor() {
-    _dio.interceptors
-        .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
+    _dio.interceptors.add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
       /// Do something before send out a http request.
 
       /// 如果你想完成请求并返回一些自定义数据，可以返回一个`Response`对象
@@ -82,8 +81,7 @@ class _NetworkUtil {
       return response; // continue
     }, onError: (DioError e) async {
       /// Do something when receive a error
-      debugPrint(
-          "path => ${e.request.path}, type => ${e.type}, error => ${e.error}");
+      debugPrint("path => ${e.request.path}, type => ${e.type}, error => ${e.error}");
 
       return e; //continue
     }));

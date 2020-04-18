@@ -44,8 +44,7 @@ class NetworkPage extends StatelessWidget {
 
   void _testPostRequest() async {
     try {
-      LoopLibraryModel library =
-          await http.post<LoopLibraryModel>("/api/v3/getUserLoopLibrary");
+      LoopLibraryModel library = await http.post<LoopLibraryModel>("/api/v3/getUserLoopLibrary");
 
       print(library.cards.map((card) => card.toJson()));
     } catch (e) {

@@ -15,9 +15,7 @@ class SystemApiPage extends StatelessWidget {
       body: Container(
         width: double.infinity,
         child: ListView(
-          children: <Widget>[
-            _createButton('转换设备方向', _setPreferredOrientations)
-          ],
+          children: <Widget>[_createButton('转换设备方向', _setPreferredOrientations)],
         ),
       ),
     );

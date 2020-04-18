@@ -20,6 +20,7 @@ import 'package:flutter_tutorial/pages/tinder_card_page.dart';
 import 'package:flutter_tutorial/pages/transform_page.dart';
 import 'package:flutter_tutorial/pages/blur_mask_page.dart';
 import 'package:flutter_tutorial/pages/clip_page.dart';
+import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'absorb_pointer_page.dart';
 import 'animation_demo/animated_list_page.dart';
 import 'curved_navigation_bar_page.dart';
@@ -71,6 +72,7 @@ class HomePage extends StatelessWidget {
     FutureBuilderPage.routeName,
     StreamBuilderPage.routeName,
     ProviderFirstPage.routeName,
+    ExampleViewModelPage.routeName,
     HtmlJsPage.routeName,
     NetworkPage.routeName,
     SystemApiPage.routeName

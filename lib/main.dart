@@ -39,6 +39,7 @@ import 'package:flutter_tutorial/pages/text_page.dart';
 import 'package:flutter_tutorial/pages/textfield_page.dart';
 import 'package:flutter_tutorial/pages/tinder_card_page.dart';
 import 'package:flutter_tutorial/pages/transform_page.dart';
+import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
 import 'package:flutter_tutorial/stores/counter_store.dart';
@@ -84,13 +85,11 @@ MaterialApp app = MaterialApp(
     '/TextFormField': (context) => FormValidationPage(),
     '/ScrollView': (context) => ScrollViewPage(),
     '/ListView': (context) => ListViewPage(),
-    '/${ScrollablePositionedListPage.routeName}': (context) =>
-        ScrollablePositionedListPage(),
+    '/${ScrollablePositionedListPage.routeName}': (context) => ScrollablePositionedListPage(),
     '/GridView': (context) => GridViewPage(),
     '/${LinkedScrollPage.routeName}': (context) => LinkedScrollPage(),
     '/Waterfall': (context) => WaterfallPage(),
-    '/${ListWheelScrollViewPage.routeName}': (context) =>
-        ListWheelScrollViewPage(),
+    '/${ListWheelScrollViewPage.routeName}': (context) => ListWheelScrollViewPage(),
     '/Sliver': (context) => SliverPage(),
     '/${AnimatedListPage.routeName}': (context) => AnimatedListPage(),
     '/Opacity': (context) => OpacityPage(),
@@ -109,14 +108,13 @@ MaterialApp app = MaterialApp(
     "/${PageViewPage.routeName}": (context) => PageViewPage(),
     "/${SwiperPage.routeName}": (context) => SwiperPage(),
     "/${TinderCardPage.routeName}": (context) => TinderCardPage(),
-    "/${CurvedNavigationBarPage.routeName}": (context) =>
-        CurvedNavigationBarPage(),
-    "/${GlobalNotificationPage.routeName}": (context) =>
-        GlobalNotificationPage(),
+    "/${CurvedNavigationBarPage.routeName}": (context) => CurvedNavigationBarPage(),
+    "/${GlobalNotificationPage.routeName}": (context) => GlobalNotificationPage(),
     "/${FutureBuilderPage.routeName}": (context) => FutureBuilderPage(),
     "/${StreamBuilderPage.routeName}": (context) => StreamBuilderPage(),
     "/${NetworkPage.routeName}": (context) => NetworkPage(),
     "/${ProviderFirstPage.routeName}": (context) => ProviderFirstPage(),
+    "/${ExampleViewModelPage.routeName}": (context) => ExampleViewModelPage(),
     "/${HtmlJsPage.routeName}": (context) => HtmlJsPage(),
     "/${SystemApiPage.routeName}": (context) => SystemApiPage(),
   },

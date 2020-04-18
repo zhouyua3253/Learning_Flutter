@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
@@ -35,6 +34,26 @@ class StreamBuilderPage extends StatelessWidget {
 
   final _CurrentTimeStream _timeStream = _CurrentTimeStream();
 
+  /**
+   * factory Stream<T>.periodic() 工厂方法生成Stream
+   * https://medium.com/flutter-community/understanding-streams-in-flutter-dart-827340437da6
+   */
+  Stream<int> get _countDownStream {
+    return Stream<int>.periodic(Duration(seconds: 1), (int value) {
+      return 10 - value;
+    }).take(10);
+  }
+
+  /// Stream<T>.periodic()
+  /// Stream<T>.take(int count) → Stream<T>
+  /// Stream<T>.takeWhile(bool test(T element)) → Stream<T>
+  /// Stream<T>.skip(int count)
+  /// Stream<T>.skipWhile(bool test(T element))
+  /// Stream<T>.distinct([bool equals(T previous, T next)]) 取唯一不同的值
+  /// Stream<T>.listen() → StreamSubscription<T>
+  /// Stream<T>.toList() → Future<List<T>>
+  /// Stream<T>.forEach() → Future
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +62,6 @@ class StreamBuilderPage extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        color: Colors.redAccent,
         height: double.infinity,
         child: RefreshIndicator(
           onRefresh: () => _timeStream.addNow(),
@@ -59,9 +77,8 @@ class StreamBuilderPage extends StatelessWidget {
                     stream: _timeStream.steam,
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Text('ConnectionState.waiting');
-                      } else if (snapshot.connectionState ==
-                          ConnectionState.done) {
+                        return Text('StreamController\nConnectionState.waiting');
+                      } else if (snapshot.connectionState == ConnectionState.done) {
                         return Text('done');
                       }
 
@@ -76,9 +93,23 @@ class StreamBuilderPage extends StatelessWidget {
                 Center(
                   child: Button(
                       padding: const EdgeInsets.all(16),
-                      child: Text('CLOSE'),
+                      child: Text('StreamController\nCLOSE'),
                       onPressed: () => _timeStream.close()),
-                )
+                ),
+                Center(
+                    child: StreamBuilder<int>(
+                        stream: _countDownStream,
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.done) {
+                            return Text('done');
+                          }
+
+                          if (snapshot.hasData) {
+                            return Text('Stream<T>.periodic()\ncountdown ${snapshot.data}s');
+                          }
+
+                          return Container();
+                        })),
               ],
             ),
           ),

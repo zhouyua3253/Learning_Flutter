@@ -17,44 +17,34 @@ class RouteTransitionPage extends StatelessWidget {
             children: <Widget>[
               RaisedButton(
                   child: Text('fade'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.fade)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.fade)),
               RaisedButton(
                   child: Text('rightToLeft'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.rightToLeft)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.rightToLeft)),
               RaisedButton(
                   child: Text('leftToRight'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.leftToRight)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.leftToRight)),
               RaisedButton(
                   child: Text('upToDown'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.upToDown)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.upToDown)),
               RaisedButton(
                   child: Text('downToUp'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.downToUp)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.downToUp)),
               RaisedButton(
                   child: Text('scale'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.scale)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.scale)),
               RaisedButton(
                   child: Text('rotate'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.rotate)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.rotate)),
               RaisedButton(
                   child: Text('size'),
-                  onPressed: () =>
-                      _pushNewPage(context, PageTransitionType.size)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.size)),
               RaisedButton(
                   child: Text('rightToLeftWithFade'),
-                  onPressed: () => _pushNewPage(
-                      context, PageTransitionType.rightToLeftWithFade)),
+                  onPressed: () => _pushNewPage(context, PageTransitionType.rightToLeftWithFade)),
               RaisedButton(
                   child: Text('leftToRightWithFade'),
-                  onPressed: () => _pushNewPage(
-                      context, PageTransitionType.leftToRightWithFade))
+                  onPressed: () => _pushNewPage(context, PageTransitionType.leftToRightWithFade))
             ],
           ),
         ),

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class TweenAnimationBuilderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ColorTween tween =
-        ColorTween(begin: Colors.white, end: Colors.black.withOpacity(0.8));
+    ColorTween tween = ColorTween(begin: Colors.white, end: Colors.black.withOpacity(0.8));
 
     return Scaffold(
       appBar: AppBar(

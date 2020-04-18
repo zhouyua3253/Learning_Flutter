@@ -35,8 +35,7 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
     );
   }
 
-  Widget _animatedListBuilder(
-      BuildContext context, int index, Animation<double> animation) {
+  Widget _animatedListBuilder(BuildContext context, int index, Animation<double> animation) {
     return FadeTransition(
       opacity: animation,
       child: ListTile(
@@ -48,13 +47,11 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
 
   void _insertItem() {
     _initialItemCount += 1;
-    _animatedListKey.currentState
-        .insertItem(_initialItemCount, duration: Duration(seconds: 1));
+    _animatedListKey.currentState.insertItem(_initialItemCount, duration: Duration(seconds: 1));
   }
 
   void _removeItem() {
-    _animatedListKey.currentState.removeItem(_initialItemCount,
-        (context, animation) {
+    _animatedListKey.currentState.removeItem(_initialItemCount, (context, animation) {
       return RotationTransition(
         turns: animation,
         child: ListTile(

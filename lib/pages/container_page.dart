@@ -9,13 +9,7 @@ class ContainerPage extends StatefulWidget {
 }
 
 class _ContainerPageState extends State<ContainerPage> {
-  List<Color> colors = [
-    Colors.red[200],
-    Colors.orange,
-    Colors.cyan,
-    Colors.grey,
-    Colors.purple
-  ];
+  List<Color> colors = [Colors.red[200], Colors.orange, Colors.cyan, Colors.grey, Colors.purple];
   Color _color = Colors.grey[200];
 
   List<double> sizes = [100, 200, 150, 40, 250, 80];
@@ -60,8 +54,7 @@ class _ContainerPageState extends State<ContainerPage> {
   void _changeContainerRadius() {
     this.setState(() {
       int index = Random().nextInt(4);
-      List<double> validSizes =
-          borderRadius.where((e) => e != _radius).toList();
+      List<double> validSizes = borderRadius.where((e) => e != _radius).toList();
       _radius = validSizes[index];
     });
   }
@@ -69,8 +62,7 @@ class _ContainerPageState extends State<ContainerPage> {
   void _startAlignmentAnimation() {
     this.setState(() {
       int index = Random().nextInt(3);
-      List<Alignment> validAligns =
-          aligns.where((e) => e != _alignment).toList();
+      List<Alignment> validAligns = aligns.where((e) => e != _alignment).toList();
       _alignment = validAligns[index];
     });
   }
@@ -104,8 +96,7 @@ class _ContainerPageState extends State<ContainerPage> {
               Text('Material: 使用elevation实现阴影效果\nborderRadius实现圆角，无法剪切child'),
               Material(
                 elevation: 20,
-                borderRadius:
-                    BorderRadius.horizontal(left: Radius.circular(30)),
+                borderRadius: BorderRadius.horizontal(left: Radius.circular(30)),
                 color: Colors.cyan,
                 child: Container(width: 100, height: 100),
               ),
@@ -118,8 +109,7 @@ class _ContainerPageState extends State<ContainerPage> {
                 ),
                 width: 200,
                 height: 100,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
               ),
               Text('borderRadius 剪切 BoxDecoration.image'),
               Container(
@@ -130,15 +120,12 @@ class _ContainerPageState extends State<ContainerPage> {
                     'BoxDecoration\nimage',
                     textAlign: TextAlign.center,
                     textScaleFactor: 1.65,
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.horizontal(left: Radius.circular(30)),
-                      image: DecorationImage(
-                          image: AssetImage('images/3.jpg'),
-                          fit: BoxFit.cover))),
+                      borderRadius: BorderRadius.horizontal(left: Radius.circular(30)),
+                      image:
+                          DecorationImage(image: AssetImage('images/3.jpg'), fit: BoxFit.cover))),
               SizedBox(
                 height: 20,
               ),
@@ -147,8 +134,7 @@ class _ContainerPageState extends State<ContainerPage> {
                 child: FlutterLogo(
                   size: 100,
                 ),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.redAccent),
+                decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.redAccent),
               ),
               SizedBox(
                 height: 30,
@@ -159,14 +145,8 @@ class _ContainerPageState extends State<ContainerPage> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
-                      BoxShadow(
-                          color: Colors.blueAccent,
-                          offset: Offset(10, 20),
-                          blurRadius: 15),
-                      BoxShadow(
-                          color: Colors.red,
-                          offset: Offset(-10, -10),
-                          blurRadius: 10),
+                      BoxShadow(color: Colors.blueAccent, offset: Offset(10, 20), blurRadius: 15),
+                      BoxShadow(color: Colors.red, offset: Offset(-10, -10), blurRadius: 10),
                     ],
                     border: Border.all(color: Colors.blueGrey, width: 10),
                     borderRadius: BorderRadius.horizontal(

@@ -91,10 +91,7 @@ class PickerPage extends StatelessWidget {
     DateTime lastDate = today.add(Duration(days: 30));
 
     DateTime date = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: firstDate,
-        lastDate: lastDate);
+        context: context, initialDate: DateTime.now(), firstDate: firstDate, lastDate: lastDate);
     print("Material date $date");
   }
 
@@ -159,8 +156,7 @@ class PickerPage extends StatelessWidget {
   }
 
   void _showCustomMaterialPicker(BuildContext context) {
-    SimpleDialog dialog =
-        SimpleDialog(title: Text('Please choose one option!'), children: [
+    SimpleDialog dialog = SimpleDialog(title: Text('Please choose one option!'), children: [
       ListTile(
         title: Text("option 1"),
         contentPadding: EdgeInsets.symmetric(horizontal: 30),

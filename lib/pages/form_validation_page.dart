@@ -111,8 +111,7 @@ class _FormValidationPageState extends State<FormValidationPage> {
 
     if (isValid) {
       SnackBar snackbar = SnackBar(
-        content: Text(
-            "Name -> ${_nameInputController.text}, pwd -> ${_pwdInputController.text}"),
+        content: Text("Name -> ${_nameInputController.text}, pwd -> ${_pwdInputController.text}"),
       );
       Scaffold.of(context).showSnackBar(snackbar);
     }

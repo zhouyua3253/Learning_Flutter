@@ -48,8 +48,7 @@ class _AnimatedCrossFadePageState extends State<AnimatedCrossFadePage> {
           AnimatedCrossFade(
             crossFadeState: _crossFadeState,
             firstChild: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(width: 4, color: Colors.grey)),
+              decoration: BoxDecoration(border: Border.all(width: 4, color: Colors.grey)),
               child: FlutterLogo(
                 size: 200,
               ),
@@ -70,8 +69,7 @@ class _AnimatedCrossFadePageState extends State<AnimatedCrossFadePage> {
     );
   }
 
-  Widget _layoutBuilder(Widget topChild, Key topChildKey, Widget bottomChild,
-      Key bottomChildKey) {
+  Widget _layoutBuilder(Widget topChild, Key topChildKey, Widget bottomChild, Key bottomChildKey) {
     return Stack(
       overflow: Overflow.visible,
       alignment: Alignment.center,

@@ -60,8 +60,7 @@ Map<String, dynamic> loopLibraryCardToJson(LoopLibraryCard entity) {
   return data;
 }
 
-loopLibraryCardsLoopFromJson(
-    LoopLibraryCardsLoop data, Map<String, dynamic> json) {
+loopLibraryCardsLoopFromJson(LoopLibraryCardsLoop data, Map<String, dynamic> json) {
   if (json['loop_description_why'] != null) {
     data.loopDescriptionWhy = json['loop_description_why']?.toString();
   }

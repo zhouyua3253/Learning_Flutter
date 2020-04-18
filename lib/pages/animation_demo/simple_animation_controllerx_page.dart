@@ -6,13 +6,11 @@ class SimpleAnimationControllerXPage extends StatefulWidget {
   static String routeName = 'SimpleAnimationControllerX';
 
   @override
-  _SimpleAnimationControllerXPageState createState() =>
-      _SimpleAnimationControllerXPageState();
+  _SimpleAnimationControllerXPageState createState() => _SimpleAnimationControllerXPageState();
 }
 
 /// https://github.com/felixblaschke/simple_animations/blob/master/documentation/ANIMATION_CONTROLLER_X.md
-class _SimpleAnimationControllerXPageState
-    extends State<SimpleAnimationControllerXPage>
+class _SimpleAnimationControllerXPageState extends State<SimpleAnimationControllerXPage>
     with AnimationControllerMixin {
   Animation<double> _sizeAnimation;
 
@@ -50,8 +48,7 @@ class _SimpleAnimationControllerXPageState
     controller.addStatusListener((status) {
       print("addStatusListener -> $status");
     });
-    controller.onStatusChange =
-        (AnimationControllerXStatus status, AnimationTask task) {
+    controller.onStatusChange = (AnimationControllerXStatus status, AnimationTask task) {
       print(status);
       print(task);
     };

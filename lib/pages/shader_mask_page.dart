@@ -17,13 +17,10 @@ class ShaderMaskPage extends StatelessWidget {
               child: ShaderMask(
                 shaderCallback: (rect) {
                   return LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.yellow,
-                        Colors.deepPurple,
-                        Colors.redAccent
-                      ]).createShader(rect);
+                          begin: Alignment.centerLeft,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.yellow, Colors.deepPurple, Colors.redAccent])
+                      .createShader(rect);
                 },
                 child: Column(
                   children: <Widget>[
@@ -52,12 +49,8 @@ class ShaderMaskPage extends StatelessWidget {
                 return RadialGradient(
                     radius: 0.5,
                     tileMode: TileMode.mirror,
-                    colors: [
-                      Colors.blueGrey,
-                      Colors.orange,
-                      Colors.pink,
-                      Colors.black87
-                    ]).createShader(rect);
+                    colors: [Colors.blueGrey, Colors.orange, Colors.pink, Colors.black87])
+                    .createShader(rect);
               },
               child: Column(
                 children: <Widget>[

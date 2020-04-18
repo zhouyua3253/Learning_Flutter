@@ -25,8 +25,7 @@ class ImagePage extends StatelessWidget {
             FadeInImage.assetNetwork(
               height: 200,
               placeholder: 'images/1.jpg',
-              image:
-                  'https://static.cnbetacdn.com/thumb/article/2020/0106/5879a79d6dc88b6.jpg',
+              image: 'https://static.cnbetacdn.com/thumb/article/2020/0106/5879a79d6dc88b6.jpg',
               fadeInDuration: Duration(seconds: 1),
             ),
             Divider(),

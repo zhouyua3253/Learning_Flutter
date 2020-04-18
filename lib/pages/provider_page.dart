@@ -5,7 +5,7 @@ import 'package:flutter_tutorial/stores/user_store.dart';
 import 'package:provider/provider.dart';
 
 class ProviderFirstPage extends StatelessWidget {
-  static String routeName = 'Provider';
+  static String routeName = '全局Provider';
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,12 @@ class ProviderFirstPage extends StatelessWidget {
                * Provider.of(context).value 变化会刷新整个页面
                */
               Text('Provider.of<T>(context).value 变化会刷新整个页面'),
-              Text(
-                  "Provider.of -> ${Provider.of<CounterStore>(context).count}"),
+              Text("Provider.of -> ${Provider.of<CounterStore>(context).count}"),
               Divider(),
               Text('Consumer<T>(builder:) 只刷新builder的widget'),
               Consumer<UserStore>(
                 builder: (context, store, child) {
-                  print('Consumer build!!!!!!!!!');
+                  print('Consumer.builder!!!!!!!!!');
                   return Expanded(
                     child: ListView(
                         children: store.timeStamps
@@ -58,8 +57,6 @@ class ProviderFirstPage extends StatelessWidget {
   }
 
   void _onAddTimeStamp(BuildContext context) async {
-    print('async func start');
     await Provider.of<UserStore>(context, listen: false).addTimeStamps();
-    print('async func end');
   }
 }

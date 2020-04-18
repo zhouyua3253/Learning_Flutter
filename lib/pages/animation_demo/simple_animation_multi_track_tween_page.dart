@@ -21,18 +21,15 @@ class SimpleAnimationMultiTrackTweenPage extends StatelessWidget {
   final MultiTrackTween tween = MultiTrackTween([
     Track("size").add(Duration(seconds: 4), Tween(begin: 0.0, end: 150.0)),
     Track("color")
-        .add(Duration(seconds: 2),
-            ColorTween(begin: Colors.red, end: Colors.blue),
+        .add(Duration(seconds: 2), ColorTween(begin: Colors.red, end: Colors.blue),
             curve: Curves.easeIn)
-        .add(Duration(seconds: 2),
-            ColorTween(begin: Colors.blue, end: Colors.green),
+        .add(Duration(seconds: 2), ColorTween(begin: Colors.blue, end: Colors.green),
             curve: Curves.easeOut),
     Track("rotation")
 
-        /// 延迟1s
+    /// 延迟1s
         .add(Duration(seconds: 1), ConstantTween(0.0))
-        .add(Duration(seconds: 2), Tween(begin: 0.0, end: pi),
-            curve: Curves.easeOutSine)
+        .add(Duration(seconds: 2), Tween(begin: 0.0, end: pi), curve: Curves.easeOutSine)
   ]);
 
   Widget buildAnimation() {

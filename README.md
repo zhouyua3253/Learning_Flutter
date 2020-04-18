@@ -18,5 +18,5 @@ samples, guidance on mobile development, and a full API reference.
 ### Format dart code
 - [Install dartformat tool](https://pub.dev/packages/dart_style)
 ```
- dartformat ./lib --overwrite --line-length 80
+ dartformat ./lib --overwrite --line-length 100
 ```

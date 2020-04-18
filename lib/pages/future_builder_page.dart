@@ -38,8 +38,7 @@ class FutureBuilderPage extends StatelessWidget {
       // AsyncSnapshot<String>(ConnectionState.done, null, FormatException: Something goes wrong.)
       return Text(
         (snapshot.error as FormatException).message,
-        style: TextStyle(
-            color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20),
+        style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20),
       );
     } else {
       return CircularProgressIndicator();

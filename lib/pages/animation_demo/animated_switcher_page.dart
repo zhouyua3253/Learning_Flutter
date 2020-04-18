@@ -8,8 +8,8 @@ class AnimatedSwitcherPage extends StatefulWidget {
 
 class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
   /// Add a key id the animated widgets have the same type!!!!!
-  final Widget _child1 = Opacity(
-      child: Image.asset('images/4.jpg'), opacity: 0.5, key: ValueKey(1));
+  final Widget _child1 =
+      Opacity(child: Image.asset('images/4.jpg'), opacity: 0.5, key: ValueKey(1));
   final Widget _child2 = Opacity(
       child: Container(
         color: Colors.pink,
@@ -105,18 +105,15 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
         child: child,
       );
     } else if (_transition == 'SizeTransition - vertical') {
-      return SizeTransition(
-          sizeFactor: animation, child: child, axis: Axis.vertical);
+      return SizeTransition(sizeFactor: animation, child: child, axis: Axis.vertical);
     } else if (_transition == 'SizeTransition - horizontal') {
-      return SizeTransition(
-          sizeFactor: animation, child: child, axis: Axis.horizontal);
+      return SizeTransition(sizeFactor: animation, child: child, axis: Axis.horizontal);
     }
 
     return null;
   }
 
-  Widget _customLayoutBuilder(
-      Widget currentChild, List<Widget> previousChildren) {
+  Widget _customLayoutBuilder(Widget currentChild, List<Widget> previousChildren) {
     return Stack(
       children: <Widget>[
         ...previousChildren,

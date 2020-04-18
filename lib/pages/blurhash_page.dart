@@ -23,8 +23,7 @@ class BlurHashPage extends StatelessWidget {
               /// https://blurha.sh Create blur hash from a image
               /// The more components you pick, the more information is retained in the placeholder
               child: BlurHash(
-                hash:
-                    'gQJsI7^iIW=^tPNIIq~Ct7niR+WVoKo00:R+t3IqnPt5t6E8NHovjZWCj[kBX8I;V[xZbHjZWC',
+                hash: 'gQJsI7^iIW=^tPNIIq~Ct7niR+WVoKo00:R+t3IqnPt5t6E8NHovjZWCj[kBX8I;V[xZbHjZWC',
               ),
             ),
             Divider(),

@@ -18,15 +18,12 @@ class TextPage extends StatelessWidget {
             children: <Widget>[
               Text(
                 'BOLD',
-                style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+                style:
+                    TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
                 'BOLD & ITALIC',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                style: TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
               ),
               SizedBox(
                 height: 10,
@@ -143,9 +140,7 @@ class TextPage extends StatelessWidget {
               ),
               Text('UNDERLINE',
                   textScaleFactor: 2,
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 5)),
+                  style: TextStyle(decoration: TextDecoration.underline, decorationThickness: 5)),
               Text('UNDERLINE: dashed',
                   textScaleFactor: 2,
                   style: TextStyle(
@@ -184,8 +179,7 @@ class TextPage extends StatelessWidget {
               ),
               Text(
                 'Custom font FLUTTER tuturial',
-                style: TextStyle(
-                    fontFamily: 'CourierPrime', fontStyle: FontStyle.italic),
+                style: TextStyle(fontFamily: 'CourierPrime', fontStyle: FontStyle.italic),
               ),
               Text(
                 'Custom font FLUTTER tuturial',
@@ -264,10 +258,7 @@ class TextPage extends StatelessWidget {
               RichText(
                 text: TextSpan(
                     // Default style for the rich text
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                        fontFamily: 'CourierPrime'),
+                    style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: 'CourierPrime'),
                     text: 'RichText: Thanks for attending ',
                     children: [
                       TextSpan(
@@ -278,9 +269,12 @@ class TextPage extends StatelessWidget {
                               fontStyle: FontStyle.italic)),
                       TextSpan(
                           text: ' — you can still watch the video.',
-                          style: Theme.of(context).textTheme.body2.copyWith(
-                              color: Colors.orange,
-                              decoration: TextDecoration.lineThrough)),
+                          style: Theme
+                              .of(context)
+                              .textTheme
+                              .body2
+                              .copyWith(
+                              color: Colors.orange, decoration: TextDecoration.lineThrough)),
                     ]),
               ),
             ],

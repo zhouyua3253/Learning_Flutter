@@ -22,8 +22,7 @@ class JsonConvert<T> {
       case LoopLibraryCard:
         return loopLibraryCardFromJson(data as LoopLibraryCard, json) as T;
       case LoopLibraryCardsLoop:
-        return loopLibraryCardsLoopFromJson(data as LoopLibraryCardsLoop, json)
-            as T;
+        return loopLibraryCardsLoopFromJson(data as LoopLibraryCardsLoop, json) as T;
     }
     return data as T;
   }

@@ -83,61 +83,58 @@ class AnimationPage extends StatelessWidget {
             MaterialPageRoute(builder: (BuildContext context) => TweenPage()));
         break;
       case 'ColorTween+AnimatedBuilder':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => ColorTweenPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => ColorTweenPage()));
         break;
       case 'IntTween+AnimatedBuilder':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => IntTweenPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => IntTweenPage()));
         break;
 
       case 'AnimatedIcon':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => AnimatedIconPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => AnimatedIconPage()));
         break;
 
       case 'AnimatedCrossFade 淡入切换显示控件':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => AnimatedCrossFadePage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => AnimatedCrossFadePage()));
         break;
 
       case 'AnimatedSwitcher 切换控件':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => AnimatedSwitcherPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => AnimatedSwitcherPage()));
         break;
 
       case 'TweenAnimationBuilder 一次性动画':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => TweenAnimationBuilderPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => TweenAnimationBuilderPage()));
         break;
 
       case "SimpleAnimationMultiTrackTweenPage":
         Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) =>
-                SimpleAnimationMultiTrackTweenPage()));
+            builder: (BuildContext context) => SimpleAnimationMultiTrackTweenPage()));
         break;
 
       case 'SimpleAnimationControllerX':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) =>
-                SimpleAnimationControllerXPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => SimpleAnimationControllerXPage()));
         break;
 
       case 'SimpleAnimationControlledAnimation':
         Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) =>
-                SimpleAnimationControlledAnimationPage()));
+            builder: (BuildContext context) => SimpleAnimationControlledAnimationPage()));
         break;
 
       case 'RouteTransition':
-        Navigator.of(context).push<MaterialPageRoute>(MaterialPageRoute(
-            builder: (BuildContext context) => RouteTransitionPage()));
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => RouteTransitionPage()));
         break;
     }
   }
 
   void _pushHeroPage(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute<MaterialPageRoute>(
-        builder: (BuildContext context) => HeroPage()));
+    Navigator.of(context)
+        .push(MaterialPageRoute<MaterialPageRoute>(builder: (BuildContext context) => HeroPage()));
   }
 }
