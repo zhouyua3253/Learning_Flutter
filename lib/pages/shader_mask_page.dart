@@ -47,9 +47,9 @@ class ShaderMaskPage extends StatelessWidget {
             ShaderMask(
               shaderCallback: (rect) {
                 return RadialGradient(
-                    radius: 0.5,
-                    tileMode: TileMode.mirror,
-                    colors: [Colors.blueGrey, Colors.orange, Colors.pink, Colors.black87])
+                        radius: 0.5,
+                        tileMode: TileMode.mirror,
+                        colors: [Colors.blueGrey, Colors.orange, Colors.pink, Colors.black87])
                     .createShader(rect);
               },
               child: Column(

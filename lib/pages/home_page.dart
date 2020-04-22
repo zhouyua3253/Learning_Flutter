@@ -13,6 +13,7 @@ import 'package:flutter_tutorial/pages/positioned_list_page.dart';
 import 'package:flutter_tutorial/pages/provider_page.dart';
 import 'package:flutter_tutorial/pages/scaffold_page.dart';
 import 'package:flutter_tutorial/pages/shader_mask_page.dart';
+import 'package:flutter_tutorial/pages/slider_page/slider_page.dart';
 import 'package:flutter_tutorial/pages/stream_builder_page.dart';
 import 'package:flutter_tutorial/pages/swiper_page.dart';
 import 'package:flutter_tutorial/pages/system_api_page.dart';
@@ -20,6 +21,7 @@ import 'package:flutter_tutorial/pages/tinder_card_page.dart';
 import 'package:flutter_tutorial/pages/transform_page.dart';
 import 'package:flutter_tutorial/pages/blur_mask_page.dart';
 import 'package:flutter_tutorial/pages/clip_page.dart';
+import 'package:flutter_tutorial/pages/typography_page.dart';
 import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'absorb_pointer_page.dart';
 import 'animation_demo/animated_list_page.dart';
@@ -36,6 +38,7 @@ class HomePage extends StatelessWidget {
     TransformPage.routeName,
     'Stack',
     'Text',
+    TypographyPage.routeName,
     'Image',
     LineIconPage.routeName,
     'Column',
@@ -58,7 +61,7 @@ class HomePage extends StatelessWidget {
     GoogleNavBarPage.routeName,
     'Animation',
     DismissiblePage.routeName,
-    '水波纹',
+    SliderPage.routeName,
     ShaderMaskPage.routeName,
     AbsorbPointerPage.routeName,
     ClipPage.routeName,
@@ -81,10 +84,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal[50],
       appBar: AppBar(
         title: Text("第一个demo"),
-        backgroundColor: Colors.deepOrangeAccent,
         centerTitle: true,
         elevation: 5,
       ),
@@ -111,7 +112,7 @@ class HomePage extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white),
       ),
-      color: Colors.redAccent[200],
+      color: Theme.of(context).primaryColor,
       onPressed: () {
         _onClickButton(context, item);
       },

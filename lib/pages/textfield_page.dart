@@ -126,6 +126,16 @@ class _TextFieldPageState extends State<TextFieldPage> {
           Container(
             color: Colors.grey[200],
             child: TextField(
+              decoration: InputDecoration(
+                  labelText: 'label+border',
+                  border: OutlineInputBorder(),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 15)),
+            ),
+          ),
+          Divider(),
+          Container(
+            color: Colors.grey[200],
+            child: TextField(
                 decoration: InputDecoration.collapsed(hintText: 'InputDecoration.collapsed')),
           ),
           Divider(),
@@ -183,16 +193,38 @@ class _TextFieldPageState extends State<TextFieldPage> {
           Center(
             child: Button(
               padding: EdgeInsets.all(10),
-              child: Text('DISMISS KEYBOARD'),
+              child: Text('DISMISS KEYBOARD using FocusNode'),
+              onPressed: _dismissFocusNode,
+            ),
+          ),
+          Center(
+            child: Button(
+              padding: EdgeInsets.all(10),
+              child: Text('DISMISS ALL KEYBOARD'),
               onPressed: () {
-                if (_focusNode.hasFocus) {
-                  _focusNode.unfocus();
-                }
+                _dismissGlobalKeyboard(context);
               },
             ),
           ),
         ]),
       ),
     );
+  }
+
+  void _dismissFocusNode() {
+    if (_focusNode.hasFocus) {
+      _focusNode.unfocus();
+    }
+  }
+
+  /**
+   * https://flutterigniter.com/dismiss-keyboard-form-lose-focus/
+   */
+  void _dismissGlobalKeyboard(BuildContext context) {
+    FocusScopeNode currentFocus = FocusScope.of(context);
+
+    if (!currentFocus.hasPrimaryFocus) {
+      currentFocus.unfocus();
+    }
   }
 }

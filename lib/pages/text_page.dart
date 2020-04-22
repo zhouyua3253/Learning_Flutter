@@ -269,11 +269,7 @@ class TextPage extends StatelessWidget {
                               fontStyle: FontStyle.italic)),
                       TextSpan(
                           text: ' — you can still watch the video.',
-                          style: Theme
-                              .of(context)
-                              .textTheme
-                              .body2
-                              .copyWith(
+                          style: Theme.of(context).textTheme.body2.copyWith(
                               color: Colors.orange, decoration: TextDecoration.lineThrough)),
                     ]),
               ),

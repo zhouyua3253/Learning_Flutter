@@ -27,7 +27,7 @@ class SimpleAnimationMultiTrackTweenPage extends StatelessWidget {
             curve: Curves.easeOut),
     Track("rotation")
 
-    /// 延迟1s
+        /// 延迟1s
         .add(Duration(seconds: 1), ConstantTween(0.0))
         .add(Duration(seconds: 2), Tween(begin: 0.0, end: pi), curve: Curves.easeOutSine)
   ]);

@@ -16,7 +16,6 @@ import 'package:flutter_tutorial/pages/gridview_page.dart';
 import 'package:flutter_tutorial/pages/home_page.dart';
 import 'package:flutter_tutorial/pages/html_js_page.dart';
 import 'package:flutter_tutorial/pages/image_page.dart';
-import 'package:flutter_tutorial/pages/inkwell_pae.dart';
 import 'package:flutter_tutorial/pages/line_icon_page.dart';
 import 'package:flutter_tutorial/pages/linked_scroll_page.dart';
 import 'package:flutter_tutorial/pages/list_wheel_scrollview_page.dart';
@@ -30,6 +29,7 @@ import 'package:flutter_tutorial/pages/provider_page.dart';
 import 'package:flutter_tutorial/pages/scaffold_page.dart';
 import 'package:flutter_tutorial/pages/scrollview_page.dart';
 import 'package:flutter_tutorial/pages/shader_mask_page.dart';
+import 'package:flutter_tutorial/pages/slider_page/slider_page.dart';
 import 'package:flutter_tutorial/pages/sliver_page.dart';
 import 'package:flutter_tutorial/pages/stack_page.dart';
 import 'package:flutter_tutorial/pages/stream_builder_page.dart';
@@ -39,11 +39,14 @@ import 'package:flutter_tutorial/pages/text_page.dart';
 import 'package:flutter_tutorial/pages/textfield_page.dart';
 import 'package:flutter_tutorial/pages/tinder_card_page.dart';
 import 'package:flutter_tutorial/pages/transform_page.dart';
+import 'package:flutter_tutorial/pages/typography_page.dart';
 import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
 import 'package:flutter_tutorial/stores/counter_store.dart';
+import 'package:flutter_tutorial/stores/theme_model.dart';
 import 'package:flutter_tutorial/stores/user_store.dart';
+import 'package:flutter_tutorial/utils/eaesy_color.dart' show kEaesyColor;
 import 'pages/absorb_pointer_page.dart';
 import 'pages/animation_demo/animated_list_page.dart';
 import 'pages/button_page.dart';
@@ -58,6 +61,9 @@ void main() {
       ),
       ChangeNotifierProvider<UserStore>(
         create: (_) => UserStore(),
+      ),
+      ChangeNotifierProvider<ThemeModel>(
+        create: (context) => ThemeModel(context),
       )
     ],
     child: app,
@@ -77,6 +83,7 @@ MaterialApp app = MaterialApp(
     '/${TransformPage.routeName}': (context) => TransformPage(),
     '/Stack': (context) => StackPage(),
     '/Text': (context) => TextPage(),
+    '/${TypographyPage.routeName}': (context) => TypographyPage(),
     '/Image': (context) => ImagePage(),
     '/${LineIconPage.routeName}': (context) => LineIconPage(),
     '/Column': (context) => ColumnPage(),
@@ -99,7 +106,7 @@ MaterialApp app = MaterialApp(
     '/${GoogleNavBarPage.routeName}': (_) => GoogleNavBarPage(),
     '/Animation': (context) => AnimationPage(),
     '/${DismissiblePage.routeName}': (context) => DismissiblePage(),
-    '/水波纹': (context) => InkWellPage(),
+    '/${SliderPage.routeName}': (context) => SliderPage(),
     '/${ShaderMaskPage.routeName}': (context) => ShaderMaskPage(),
     "/${AbsorbPointerPage.routeName}": (context) => AbsorbPointerPage(),
     "/${ClipPage.routeName}": (context) => ClipPage(),
@@ -118,16 +125,20 @@ MaterialApp app = MaterialApp(
     "/${HtmlJsPage.routeName}": (context) => HtmlJsPage(),
     "/${SystemApiPage.routeName}": (context) => SystemApiPage(),
   },
+
+  /**
+   * set theme 和 darkTheme的brightness
+   * 根据系统的light mode、dark mode 自动选择应用theme
+   */
+  themeMode: ThemeMode.system,
   theme: ThemeData(
-    // fontFamily: 'CourierPrime',
-    // 统一使用iOS style
-    platform: TargetPlatform.iOS,
-    /**
-     * Customized in customWidget/button.dart, instead of the global themeData
-        buttonTheme: ButtonThemeData(
-        minWidth: 0,
-        height: 0,
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap)
-     */
-  ),
+      primaryColor: Color(kEaesyColor),
+      brightness: Brightness.light,
+      // fontFamily: 'CourierPrime',
+      // 统一使用iOS style
+      platform: TargetPlatform.iOS),
+  darkTheme: ThemeData(
+      brightness: Brightness.dark,
+      // 统一使用iOS style
+      platform: TargetPlatform.iOS),
 );

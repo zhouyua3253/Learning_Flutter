@@ -65,7 +65,7 @@ class _ButtonPageState extends State<ButtonPage> {
                             child: Text('DropdownButton-3'), value: 'DropdownButton-3'),
                       ],
                       onChanged: (value) => setState(() {
-                        printError(value);
+                        warn(value);
                         _dropdownButtonValue = value;
                       }),
                     ),

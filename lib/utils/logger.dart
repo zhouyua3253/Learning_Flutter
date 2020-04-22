@@ -10,18 +10,18 @@ Logger _logger = Logger(
       printTime: true),
 );
 
-void printDebug(dynamic message) {
+void debug(dynamic message) {
   _logger.d(message);
 }
 
-void printInfo(dynamic message) {
+void info(dynamic message) {
   _logger.i(message);
 }
 
-void printWarn(dynamic message) {
+void warn(dynamic message) {
   _logger.w(message);
 }
 
-void printError(dynamic message) {
+void error(dynamic message) {
   _logger.e(message);
 }

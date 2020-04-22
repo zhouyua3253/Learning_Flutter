@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
+import 'package:flutter_tutorial/utils/eaesy_color.dart';
 
 class ContainerPage extends StatefulWidget {
   @override
@@ -97,7 +98,7 @@ class _ContainerPageState extends State<ContainerPage> {
               Material(
                 elevation: 20,
                 borderRadius: BorderRadius.horizontal(left: Radius.circular(30)),
-                color: Colors.cyan,
+                color: EaesyColor[500],
                 child: Container(width: 100, height: 100),
               ),
               Divider(),

@@ -61,7 +61,7 @@ class ClipPage extends StatelessWidget {
                 ),
                 Container(
                   decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.red),
+                      BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.red),
                   child: Image.asset(
                     'images/3.jpg',
                     width: 100,
