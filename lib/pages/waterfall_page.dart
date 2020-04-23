@@ -5,7 +5,7 @@ import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WaterfallPage extends StatelessWidget {
   final List<Map<String, int>> _items =
-      List.generate(10, (index) => {'index': index, 'height': Random().nextInt(100) + 50});
+      List.generate(50, (index) => {'index': index, 'height': Random().nextInt(100) + 50});
 
   @override
   Widget build(BuildContext context) {

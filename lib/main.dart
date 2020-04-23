@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/pages/animation_demo/main.dart';
 import 'package:flutter_tutorial/pages/blur_mask_page.dart';
 import 'package:flutter_tutorial/pages/blurhash_page.dart';
+import 'package:flutter_tutorial/pages/cal_widget_size_position.dart';
 import 'package:flutter_tutorial/pages/clip_page.dart';
 import 'package:flutter_tutorial/pages/column_page.dart';
 import 'package:flutter_tutorial/pages/container_page.dart';
@@ -30,6 +31,7 @@ import 'package:flutter_tutorial/pages/scaffold_page.dart';
 import 'package:flutter_tutorial/pages/scrollview_page.dart';
 import 'package:flutter_tutorial/pages/shader_mask_page.dart';
 import 'package:flutter_tutorial/pages/slider_page/slider_page.dart';
+import 'package:flutter_tutorial/pages/sliding_up_panel_page.dart';
 import 'package:flutter_tutorial/pages/sliver_page.dart';
 import 'package:flutter_tutorial/pages/stack_page.dart';
 import 'package:flutter_tutorial/pages/stream_builder_page.dart';
@@ -105,6 +107,7 @@ MaterialApp app = MaterialApp(
     '/Picker': (context) => PickerPage(),
     '/${GoogleNavBarPage.routeName}': (_) => GoogleNavBarPage(),
     '/Animation': (context) => AnimationPage(),
+    '/${SlidingUpPanelPage.routeName}': (_) => SlidingUpPanelPage(),
     '/${DismissiblePage.routeName}': (context) => DismissiblePage(),
     '/${SliderPage.routeName}': (context) => SliderPage(),
     '/${ShaderMaskPage.routeName}': (context) => ShaderMaskPage(),
@@ -124,6 +127,7 @@ MaterialApp app = MaterialApp(
     "/${ExampleViewModelPage.routeName}": (context) => ExampleViewModelPage(),
     "/${HtmlJsPage.routeName}": (context) => HtmlJsPage(),
     "/${SystemApiPage.routeName}": (context) => SystemApiPage(),
+    "/${CalWidgetSizePositionPage.routeName}": (context) => CalWidgetSizePositionPage(),
   },
 
   /**

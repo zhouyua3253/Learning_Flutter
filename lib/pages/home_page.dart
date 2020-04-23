@@ -14,6 +14,7 @@ import 'package:flutter_tutorial/pages/provider_page.dart';
 import 'package:flutter_tutorial/pages/scaffold_page.dart';
 import 'package:flutter_tutorial/pages/shader_mask_page.dart';
 import 'package:flutter_tutorial/pages/slider_page/slider_page.dart';
+import 'package:flutter_tutorial/pages/sliding_up_panel_page.dart';
 import 'package:flutter_tutorial/pages/stream_builder_page.dart';
 import 'package:flutter_tutorial/pages/swiper_page.dart';
 import 'package:flutter_tutorial/pages/system_api_page.dart';
@@ -25,6 +26,7 @@ import 'package:flutter_tutorial/pages/typography_page.dart';
 import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'absorb_pointer_page.dart';
 import 'animation_demo/animated_list_page.dart';
+import 'cal_widget_size_position.dart';
 import 'curved_navigation_bar_page.dart';
 import 'dismissible_page.dart';
 import 'google_nav_bar_page.dart';
@@ -60,6 +62,7 @@ class HomePage extends StatelessWidget {
     'Picker',
     GoogleNavBarPage.routeName,
     'Animation',
+    SlidingUpPanelPage.routeName,
     DismissiblePage.routeName,
     SliderPage.routeName,
     ShaderMaskPage.routeName,
@@ -78,7 +81,8 @@ class HomePage extends StatelessWidget {
     ExampleViewModelPage.routeName,
     HtmlJsPage.routeName,
     NetworkPage.routeName,
-    SystemApiPage.routeName
+    SystemApiPage.routeName,
+    CalWidgetSizePositionPage.routeName
   ];
 
   @override

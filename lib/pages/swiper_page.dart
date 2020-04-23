@@ -7,12 +7,11 @@ class SwiperPage extends StatelessWidget {
   static String routeName = 'Swiper';
 
   final List<String> _imgUrls = [
-    'https://www.yomento.net/images/210_update_1.jpg',
-    'https://www.yomento.net/images/210_update_2.jpg',
-    'https://www.yomento.net/images/210_update_3.jpg',
-    'https://www.yomento.net/images/210_update_4.jpg',
-    'https://www.yomento.net/images/230_update_2.png',
-    'https://www.yomento.net/images/230_update_1.png',
+    'https://www.yomento.net/images/2020_update_1.png',
+    'https://www.yomento.net/images/2020_update_2.png',
+    'https://www.yomento.net/images/2020_update_3.png',
+    'https://www.yomento.net/images/2020_update_4.png',
+    'https://www.yomento.net/images/2020_update_5.png'
   ];
 
   @override
@@ -42,18 +41,20 @@ class SwiperPage extends StatelessWidget {
             width: double.infinity,
             height: 250,
             child: Swiper(
-                itemBuilder: (BuildContext context, int index) => Image.network(
-                      _imgUrls[index],
-                      fit: BoxFit.cover,
+                itemBuilder: (BuildContext context, int index) => Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                              image: NetworkImage(_imgUrls[index]), fit: BoxFit.cover)),
                     ),
                 itemCount: _imgUrls.length,
                 loop: false,
                 // 主窗口的占比
-                viewportFraction: 0.8,
+                viewportFraction: 0.85,
                 // 非主窗口的children的缩放系数
-                scale: 0.8,
+                scale: 0.9,
                 // 非主窗口的children的透明度
-                fade: 0.6,
+                fade: 0.8,
                 onTap: _onTap,
                 physics: BouncingScrollPhysics()),
           ),
