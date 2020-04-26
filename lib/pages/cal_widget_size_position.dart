@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/utils/logger.dart';
 
 class CalWidgetSizePositionPage extends StatefulWidget {
-  static String routeName = 'Cal Widget Size Position';
+  static const String routeName = '/cal-size-position';
 
   @override
   _CalWidgetSizePositionPageState createState() => _CalWidgetSizePositionPageState();

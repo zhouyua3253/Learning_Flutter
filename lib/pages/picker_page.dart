@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class PickerPage extends StatelessWidget {
+  static const String routeName = '/picker';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,8 +150,8 @@ class PickerPage extends StatelessWidget {
               print("onSelectedItemChanged -> $value");
             },
             itemBuilder: (_, index) => Center(
-                  child: Text("option ${index + 1}"),
-                )));
+              child: Text("option ${index + 1}"),
+            )));
 
     // showCupertinoModalPopup(context: context, builder: (_) => picker);
     showModalBottomSheet(context: context, builder: (_) => picker);

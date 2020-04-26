@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class TextFieldPage extends StatefulWidget {
+  static const String routeName = '/text-field';
+
   @override
   _TextFieldPageState createState() => _TextFieldPageState();
 }

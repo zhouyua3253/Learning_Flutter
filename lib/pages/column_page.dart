@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ColumnPage extends StatelessWidget {
+  static const String routeName = '/column';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +23,9 @@ class ColumnPage extends StatelessWidget {
                   color: Colors.purple,
                   child: Center(
                       child: Text(
-                    'Expanded -> flex: 1',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  )),
+                        'Expanded -> flex: 1',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
                 ),
               ),
               Text('Spacer -> flex: 1'),
@@ -41,9 +43,9 @@ class ColumnPage extends StatelessWidget {
                   color: Colors.orange,
                   child: Center(
                       child: Text(
-                    'Expanded -> flex: 3',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  )),
+                        'Expanded -> flex: 3',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
                 ),
               )
             ],

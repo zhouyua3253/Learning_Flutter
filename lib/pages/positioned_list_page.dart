@@ -3,7 +3,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 /// https://pub.dev/packages/scrollable_positioned_list
 class ScrollablePositionedListPage extends StatefulWidget {
-  static String routeName = 'PositionedList';
+  static const String routeName = '/scroll-positioned-listView';
 
   @override
   _ScrollablePositionedListPageState createState() => _ScrollablePositionedListPageState();

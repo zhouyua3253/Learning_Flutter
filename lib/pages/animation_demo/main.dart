@@ -15,6 +15,8 @@ import 'hero_page.dart';
 import 'tween_animation_builder_page.dart';
 
 class AnimationPage extends StatelessWidget {
+  static const String routeName = '/animation';
+
   final List<String> _types = [
     'Tween+AnimatedBuilder',
     'ColorTween+AnimatedBuilder',
@@ -38,15 +40,15 @@ class AnimationPage extends StatelessWidget {
       body: Center(
         child: Column(children: [
           ..._types.map((type) => Button(
-                child: Text(
-                  type,
-                  textScaleFactor: 1.2,
-                ),
-                padding: EdgeInsets.all(10),
-                onPressed: () {
-                  _pushPage(context, type);
-                },
-              )),
+            child: Text(
+              type,
+              textScaleFactor: 1.2,
+            ),
+            padding: EdgeInsets.all(10),
+            onPressed: () {
+              _pushPage(context, type);
+            },
+          )),
           Hero(
               tag: HeroPage.heroTag,
               child: Column(

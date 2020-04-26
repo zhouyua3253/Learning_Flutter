@@ -11,7 +11,7 @@ import 'package:provider_architecture/viewmodel_provider.dart';
  * https://medium.com/flutter-community/a-beginners-guide-to-architecting-a-flutter-app-1e9053211a74
  */
 class ExampleViewModelPage extends StatelessWidget {
-  static String routeName = '页面ViewModel Provider';
+  static const String routeName = '/provider-view-model';
 
   @override
   Widget build(BuildContext context) {

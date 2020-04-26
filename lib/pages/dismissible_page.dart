@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DismissiblePage extends StatefulWidget {
-  static String routeName = 'Dismissible 滑动删除';
+  static const String routeName = '/dismissible-swipe';
 
   @override
   _DismissiblePageState createState() => _DismissiblePageState();

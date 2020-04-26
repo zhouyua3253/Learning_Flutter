@@ -4,7 +4,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 
 /// https://github.com/best-flutter/flutter_swiper/blob/master/README-ZH.md
 class SwiperPage extends StatelessWidget {
-  static String routeName = 'Swiper';
+  static const String routeName = '/swiper';
 
   final List<String> _imgUrls = [
     'https://www.yomento.net/images/2020_update_1.png',

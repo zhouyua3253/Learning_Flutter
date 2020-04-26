@@ -3,7 +3,7 @@ import 'package:flutter_tutorial/pages/slider_page/slider_view_model.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 
 class SliderPage extends StatelessWidget {
-  static String routeName = 'Slider';
+  static const String routeName = '/slider';
 
   @override
   Widget build(BuildContext context) {

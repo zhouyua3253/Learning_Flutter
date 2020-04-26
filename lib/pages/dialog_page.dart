@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class DialogPage extends StatefulWidget {
+  static const String routeName = '/dialog';
+
   @override
   _DialogPageState createState() => _DialogPageState();
 }

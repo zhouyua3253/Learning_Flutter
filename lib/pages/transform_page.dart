@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class TransformPage extends StatelessWidget {
-  static String routeName = 'Transform';
+  static const String routeName = '/transform';
 
   @override
   Widget build(BuildContext context) {

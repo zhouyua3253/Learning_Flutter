@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class OpacityPage extends StatefulWidget {
+  static const String routeName = '/opacity';
+
   @override
   _OpacityPageState createState() => _OpacityPageState();
 }

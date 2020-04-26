@@ -3,7 +3,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class GoogleNavBarPage extends StatefulWidget {
-  static String routeName = 'GoogleNavBar';
+  static const String routeName = '/google-nav-bar';
 
   @override
   _GoogleNavBarPageState createState() => _GoogleNavBarPageState();

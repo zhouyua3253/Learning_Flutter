@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
 
 class TinderCardPage extends StatelessWidget {
-  static String routeName = 'TinderCard';
+  static const String routeName = '/tinder-card';
 
   final List<String> _images = [
     "images/1.jpg",

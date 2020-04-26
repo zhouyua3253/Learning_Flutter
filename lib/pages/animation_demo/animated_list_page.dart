@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnimatedListPage extends StatefulWidget {
-  static String routeName = 'AnimatedList';
+  static const String routeName = '/animated-list-view';
 
   @override
   _AnimatedListPageState createState() => _AnimatedListPageState();

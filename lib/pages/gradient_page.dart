@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class GradientPage extends StatelessWidget {
+  static const String routeName = '/gradient';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

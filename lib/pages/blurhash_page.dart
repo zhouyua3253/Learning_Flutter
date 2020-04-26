@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 class BlurHashPage extends StatelessWidget {
-  static String routeName = 'BlurHash';
+  static const String routeName = '/blur-hash';
 
   @override
   Widget build(BuildContext context) {

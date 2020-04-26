@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class StackPage extends StatefulWidget {
+  static const String routeName = '/stack';
+
   @override
   _StackPageState createState() => _StackPageState();
 }

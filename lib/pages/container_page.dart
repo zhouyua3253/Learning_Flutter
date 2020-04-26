@@ -5,6 +5,8 @@ import 'package:flutter_tutorial/customWidget/button.dart';
 import 'package:flutter_tutorial/utils/eaesy_color.dart';
 
 class ContainerPage extends StatefulWidget {
+  static const String routeName = '/container';
+
   @override
   _ContainerPageState createState() => _ContainerPageState();
 }

@@ -4,7 +4,7 @@ import 'package:flutter_tutorial/utils/logger.dart';
 import 'package:like_button/like_button.dart';
 
 class ButtonPage extends StatefulWidget {
-  static String routeName = 'Buttons';
+  static const String routeName = '/button';
 
   @override
   _ButtonPageState createState() => _ButtonPageState();

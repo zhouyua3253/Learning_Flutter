@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WaterfallPage extends StatelessWidget {
+  static const String routeName = '/water-fall';
+
   final List<Map<String, int>> _items =
       List.generate(50, (index) => {'index': index, 'height': Random().nextInt(100) + 50});
 
@@ -31,7 +33,7 @@ class WaterfallPage extends StatelessWidget {
   Container _renderItem(BuildContext context, int index) {
     Color color = index == _items.length - 1 ? Colors.cyan : Colors.orange;
     String content =
-        index == _items.length - 1 ? "LastChildLayoutType.\nfullCrossAxisExtend" : "Index - $index";
+    index == _items.length - 1 ? "LastChildLayoutType.\nfullCrossAxisExtend" : "Index - $index";
     return Container(
       height: _items[index]['height'].toDouble(),
       color: color,

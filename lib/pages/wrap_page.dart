@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WrapPage extends StatelessWidget {
+  static const String routeName = '/wrap';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

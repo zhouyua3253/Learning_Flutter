@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// https://flutter.github.io/gallery/#/demo/typography
 class TypographyPage extends StatelessWidget {
-  static String routeName = 'Typography';
+  static const String routeName = '/typography';
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ShaderMaskPage extends StatelessWidget {
-  static String routeName = 'ShaderMask';
+  static const String routeName = '/shader-mask';
 
   @override
   Widget build(BuildContext context) {

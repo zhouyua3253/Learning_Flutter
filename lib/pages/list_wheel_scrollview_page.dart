@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ListWheelScrollViewPage extends StatelessWidget {
-  static String routeName = 'ListWheelScrollView';
+  static const String routeName = '/list-wheel-scroll';
 
   @override
   Widget build(BuildContext context) {

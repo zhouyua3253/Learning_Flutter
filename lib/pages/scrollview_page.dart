@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ScrollViewPage extends StatefulWidget {
+  static const String routeName = '/scrollView';
+
   @override
   _ScrollViewPageState createState() => _ScrollViewPageState();
 }

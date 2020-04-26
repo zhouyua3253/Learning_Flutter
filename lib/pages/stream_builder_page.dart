@@ -30,7 +30,7 @@ class _CurrentTimeStream {
 }
 
 class StreamBuilderPage extends StatelessWidget {
-  static String routeName = 'StreamBuilder';
+  static const String routeName = '/stream-builder';
 
   final _CurrentTimeStream _timeStream = _CurrentTimeStream();
 

@@ -5,7 +5,7 @@ class FutureBuilderPage extends StatelessWidget {
   final bool _mockError = false;
   final bool _mockResponse = true;
 
-  static String routeName = 'FutureBuilder';
+  static const String routeName = '/future-builder';
 
   @override
   Widget build(BuildContext context) {

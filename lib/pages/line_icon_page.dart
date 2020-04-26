@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 class LineIconPage extends StatelessWidget {
-  static String routeName = 'LineIcon';
+  static const String routeName = '/line-icon';
 
   final Map<String, IconData> _icons = LineIcons.values;
 

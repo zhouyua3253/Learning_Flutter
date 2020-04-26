@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PageViewPage extends StatelessWidget {
-  static String routeName = 'PageView';
+  static const String routeName = '/pageView';
 
   final _pageViews = [
     Image.asset(

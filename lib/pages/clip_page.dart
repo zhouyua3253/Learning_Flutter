@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ClipPage extends StatelessWidget {
-  static String routeName = 'Clip';
+  static const String routeName = '/clip';
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:universal_html/html.dart' as html;
 import 'package:universal_html/js.dart' as js;
 
 class HtmlJsPage extends StatelessWidget {
-  static String routeName = 'HTML+JS';
+  static const String routeName = '/html-js';
 
   @override
   Widget build(BuildContext context) {

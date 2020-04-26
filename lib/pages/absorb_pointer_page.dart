@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AbsorbPointerPage extends StatefulWidget {
-  static String routeName = 'AbsorbPointer 屏蔽遮罩';
+  static const String routeName = '/absorb-pointer';
 
   @override
   _AbsorbPointerPageState createState() => _AbsorbPointerPageState();

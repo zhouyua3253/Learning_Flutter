@@ -5,7 +5,7 @@ import 'package:flutter_tutorial/stores/user_store.dart';
 import 'package:provider/provider.dart';
 
 class ProviderFirstPage extends StatelessWidget {
-  static String routeName = '全局Provider';
+  static const String routeName = '/provider-global';
 
   @override
   Widget build(BuildContext context) {

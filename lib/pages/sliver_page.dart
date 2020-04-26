@@ -1,9 +1,10 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SliverPage extends StatelessWidget {
+  static const String routeName = '/sliver-scroll-view';
+
   final List<Map<String, int>> _items =
       List.generate(6, (index) => {'index': index, 'height': Random().nextInt(100) + 40});
 
@@ -19,6 +20,7 @@ class SliverPage extends StatelessWidget {
         top: false,
         child: NotificationListener(
           child: CustomScrollView(
+
             /// 安卓上超出范围的上下拉
             physics: BouncingScrollPhysics(),
             slivers: <Widget>[
@@ -105,10 +107,10 @@ class SliverPage extends StatelessWidget {
   List<Widget> _renderGridChildren(Color color, String type) {
     return _items
         .map((item) => Container(
-              color: color,
-              alignment: Alignment.center,
-              child: Text("$type - ${item['index'] + 1}"),
-            ))
+      color: color,
+      alignment: Alignment.center,
+      child: Text("$type - ${item['index'] + 1}"),
+    ))
         .toList();
   }
 }

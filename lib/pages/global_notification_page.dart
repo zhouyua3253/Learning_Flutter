@@ -5,7 +5,7 @@ LiveStream NOTIFICATION_CENTER = LiveStream();
 const NOTIFICATION_EVENT1 = 'NOTIFICATION_EVENT1';
 
 class GlobalNotificationPage extends StatefulWidget {
-  static String routeName = 'GlobalNotification';
+  static const String routeName = '/notification-center';
 
   @override
   _GlobalNotificationPageState createState() => _GlobalNotificationPageState();

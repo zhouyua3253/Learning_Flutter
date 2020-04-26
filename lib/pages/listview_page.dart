@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class ListViewPage extends StatefulWidget {
+  static const String routeName = '/listView';
+
   @override
   _ListViewPageState createState() => _ListViewPageState();
 }

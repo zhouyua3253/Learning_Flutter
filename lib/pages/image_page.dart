@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImagePage extends StatelessWidget {
+  static const String routeName = '/image';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +44,9 @@ class ImagePage extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                image: AssetImage('images/dialog_bg.png'),
-                centerSlice: const Rect.fromLTWH(50, 30, 1, 1),
-              )),
+                    image: AssetImage('images/dialog_bg.png'),
+                    centerSlice: const Rect.fromLTWH(50, 30, 1, 1),
+                  )),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 45),
                 child: Text(
@@ -58,17 +60,17 @@ class ImagePage extends StatelessWidget {
                 width: 200,
                 color: Colors.orangeAccent,
                 colorBlendMode: BlendMode.overlay // overlay darken softLight
-                ),
+            ),
             Image.asset('images/3.jpg',
                 width: 200,
                 color: Colors.orangeAccent,
                 colorBlendMode: BlendMode.darken // overlay darken softLight
-                ),
+            ),
             Image.asset('images/3.jpg',
                 width: 200,
                 color: Colors.orangeAccent,
                 colorBlendMode: BlendMode.softLight // overlay darken softLight
-                ),
+            ),
             Divider(),
           ],
         ),
@@ -76,11 +78,9 @@ class ImagePage extends StatelessWidget {
     );
   }
 
-  Widget _imageLoadingBuilder(
-    BuildContext context,
-    Widget child,
-    ImageChunkEvent loadingProgress,
-  ) {
+  Widget _imageLoadingBuilder(BuildContext context,
+      Widget child,
+      ImageChunkEvent loadingProgress,) {
     print("child: $child, loadingProgress: $loadingProgress");
     print("loadingProgress $loadingProgress");
 

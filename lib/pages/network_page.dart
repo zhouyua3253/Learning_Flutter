@@ -4,7 +4,7 @@ import 'package:flutter_tutorial/models/loop_library_model.dart';
 import 'package:flutter_tutorial/utils/network.dart';
 
 class NetworkPage extends StatelessWidget {
-  static const String routeName = 'Network';
+  static const String routeName = '/dio';
 
   @override
   Widget build(BuildContext context) {

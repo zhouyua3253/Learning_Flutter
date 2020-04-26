@@ -3,7 +3,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 /// https://pub.dev/packages/sliding_up_panel
 class SlidingUpPanelPage extends StatefulWidget {
-  static String routeName = 'SlidingUpPanel';
+  static const String routeName = '/sliding-up-panel';
 
   @override
   _SlidingUpPanelPageState createState() => _SlidingUpPanelPageState();

@@ -3,6 +3,8 @@ import 'package:flutter_tutorial/customWidget/button.dart';
 
 /// https://flutter.dev/docs/cookbook/forms/validation
 class FormValidationPage extends StatefulWidget {
+  static const String routeName = '/form-validation';
+
   @override
   _FormValidationPageState createState() => _FormValidationPageState();
 }

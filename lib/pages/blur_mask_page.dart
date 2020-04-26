@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 class BlurPage extends StatelessWidget {
-  static String routeName = 'Blur Mask';
+  static const String routeName = '/blur-mask';
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +21,14 @@ class BlurPage extends StatelessWidget {
                 sigmaX: 3,
                 sigmaY: 3,
               ),
-              child: Center(
-                child: Container(
-                  width: 200,
-                  height: 200,
-                  color: Colors.cyan.withOpacity(0.3),
-                  alignment: Alignment.center,
-                  child: Text(
-                    '遮罩前置组件',
-                    textScaleFactor: 1.5,
-                  ),
-                ),
+              child: Container(
+                color: Colors.black.withOpacity(0),
               ),
             ),
+          ),
+          Center(
+            child: Text('Above\nBackdropFilter',
+                style: Theme.of(context).textTheme.headline3.copyWith(color: Colors.white)),
           )
         ],
       ),

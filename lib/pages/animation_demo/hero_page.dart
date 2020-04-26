@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:universal_html/html.dart' show window;
 
 class HeroPage extends StatelessWidget {
   static String heroTag = 'HERO_TAG';
 
   @override
   Widget build(BuildContext context) {
+    print(window.history.length);
+    print(window.history.state);
     return Scaffold(
       appBar: AppBar(
         title: Text('Hero transition'),

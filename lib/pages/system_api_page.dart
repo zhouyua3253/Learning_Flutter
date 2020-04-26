@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_tutorial/customWidget/button.dart';
 
 class SystemApiPage extends StatelessWidget {
-  static String routeName = 'SystemApi';
+  static const String routeName = '/system-api';
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 
 class LinkedScrollPage extends StatefulWidget {
-  static String routeName = 'LinkedScroll';
+  static const String routeName = '/linked-scroll';
 
   @override
   _LinkedScrollPageState createState() => _LinkedScrollPageState();

@@ -1,9 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class TextPage extends StatelessWidget {
+  static const String routeName = '/text';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +20,7 @@ class TextPage extends StatelessWidget {
               Text(
                 'BOLD',
                 style:
-                    TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
                 'BOLD & ITALIC',
@@ -257,7 +258,7 @@ class TextPage extends StatelessWidget {
               Divider(),
               RichText(
                 text: TextSpan(
-                    // Default style for the rich text
+                  // Default style for the rich text
                     style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: 'CourierPrime'),
                     text: 'RichText: Thanks for attending ',
                     children: [

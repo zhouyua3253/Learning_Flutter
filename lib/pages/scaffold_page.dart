@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ScaffoldPage extends StatefulWidget {
-  static String routeName = 'Scaffold';
+  static const String routeName = '/scaffold';
 
   @override
   _ScaffoldPageState createState() => _ScaffoldPageState();
