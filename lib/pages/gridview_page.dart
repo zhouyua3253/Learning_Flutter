@@ -17,8 +17,8 @@ class GridViewPage extends StatelessWidget {
 
     /// 指定横轴上子元素的最大长度
     SliverGridDelegateWithMaxCrossAxisExtent _maxCrossAxisDelegate =
-    SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 250, mainAxisSpacing: 10, crossAxisSpacing: 20);
+        SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 250, mainAxisSpacing: 10, crossAxisSpacing: 20);
 
     return Material(
       child: SafeArea(
@@ -66,34 +66,37 @@ class GridViewPage extends StatelessWidget {
 
   List<Widget> _createGridItem() {
     return _items
-        .map((item) => Container(
-      color: Colors.cyan,
-      alignment: Alignment.center,
-      child: Text(
-          "$item\nGridView.count(\nchildren: <Widget>[]) with crossAxisCount：横轴子元素的数量",
-          textAlign: TextAlign.center),
-    ))
+        .map((item) =>
+        Container(
+          color: Colors.cyan,
+          alignment: Alignment.center,
+          child: Text(
+              "$item\nGridView.count(\nchildren: <Widget>[]) with crossAxisCount：横轴子元素的数量",
+              textAlign: TextAlign.center),
+        ))
         .toList();
   }
 
   List<Widget> _createGridItems() {
     return _items
-        .map((item) => Container(
-      color: Colors.red[300],
-      alignment: Alignment.center,
-      child: Text(
-          "$item\nGridView.extent(\nchildren: <Widget>[]) with maxCrossAxisExtent：横轴子元素的最大长度",
-          textAlign: TextAlign.center),
-    ))
+        .map((item) =>
+        Container(
+          color: Colors.red[300],
+          alignment: Alignment.center,
+          child: Text(
+              "$item\nGridView.extent(\nchildren: <Widget>[]) with maxCrossAxisExtent：横轴子元素的最大长度",
+              textAlign: TextAlign.center),
+        ))
         .toList();
   }
 
-  Widget _renderGridItem(BuildContext context, int index) => Container(
-    color: Colors.orangeAccent,
-    alignment: Alignment.center,
-    child: Text(
-      "${_items[index]}\nGridView.builder() with fixed AspectRatio",
-      textAlign: TextAlign.center,
-    ),
-  );
+  Widget _renderGridItem(BuildContext context, int index) =>
+      Container(
+        color: Colors.orangeAccent,
+        alignment: Alignment.center,
+        child: Text(
+          "${_items[index]}\nGridView.builder() with fixed AspectRatio",
+          textAlign: TextAlign.center,
+        ),
+      );
 }

@@ -20,7 +20,7 @@ class TextPage extends StatelessWidget {
               Text(
                 'BOLD',
                 style:
-                TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
                 'BOLD & ITALIC',

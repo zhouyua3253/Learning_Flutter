@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/pages/absorb_pointer_page.dart';
+import 'package:flutter_tutorial/pages/animated_text_page.dart';
 import 'package:flutter_tutorial/pages/animation_demo/animated_list_page.dart';
 import 'package:flutter_tutorial/pages/animation_demo/main.dart';
 import 'package:flutter_tutorial/pages/blur_mask_page.dart';
@@ -41,6 +42,7 @@ import 'package:flutter_tutorial/pages/sliding_up_panel_page.dart';
 import 'package:flutter_tutorial/pages/sliver_page.dart';
 import 'package:flutter_tutorial/pages/stack_page.dart';
 import 'package:flutter_tutorial/pages/stream_builder_page.dart';
+import 'package:flutter_tutorial/pages/styled_widget_page.dart';
 import 'package:flutter_tutorial/pages/swiper_page.dart';
 import 'package:flutter_tutorial/pages/system_api_page.dart';
 import 'package:flutter_tutorial/pages/text_page.dart';
@@ -83,9 +85,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   }
 
   switch (settings.name) {
+    case StyledWidgetPage.routeName:
+      return MaterialPageRoute(builder: (context) => StyledWidgetPage(), settings: settings);
     case HomePage.routeName:
-      return MaterialPageRoute(
-          builder: (context) => HomePage(), settings: settings, maintainState: false);
+      return MaterialPageRoute(builder: (context) => HomePage(), settings: settings);
     case ContainerPage.routeName:
       return MaterialPageRoute(builder: (context) => ContainerPage(), settings: settings);
     case ButtonPage.routeName:
@@ -186,6 +189,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => DisableSwipeBackPage(), settings: settings);
     case GoogleNavBarPage.routeName:
       return MaterialPageRoute(builder: (context) => GoogleNavBarPage(), settings: settings);
+    case AnimatedTextKitPage.routeName:
+      return MaterialPageRoute(builder: (context) => AnimatedTextKitPage(), settings: settings);
     // Avoid 404
     default:
       return MaterialPageRoute(builder: (context) => HomePage(), settings: settings);

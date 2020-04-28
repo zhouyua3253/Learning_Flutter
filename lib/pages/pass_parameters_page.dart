@@ -52,7 +52,7 @@ class PassParametersPage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PassParameters-2'),
+        title: Text(_name),
       ),
       body: Center(child: Text("name -> $_name, age -> $_age")),
     );

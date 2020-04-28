@@ -29,6 +29,7 @@ import 'package:flutter_tutorial/pages/sliding_up_panel_page.dart';
 import 'package:flutter_tutorial/pages/sliver_page.dart';
 import 'package:flutter_tutorial/pages/stack_page.dart';
 import 'package:flutter_tutorial/pages/stream_builder_page.dart';
+import 'package:flutter_tutorial/pages/styled_widget_page.dart';
 import 'package:flutter_tutorial/pages/swiper_page.dart';
 import 'package:flutter_tutorial/pages/system_api_page.dart';
 import 'package:flutter_tutorial/pages/text_page.dart';
@@ -42,6 +43,7 @@ import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
 import 'absorb_pointer_page.dart';
+import 'animated_text_page.dart';
 import 'animation_demo/animated_list_page.dart';
 import 'cal_widget_size_position.dart';
 import 'curved_navigation_bar_page.dart';
@@ -58,6 +60,8 @@ class HomePage extends StatelessWidget {
   final List<String> _items = [
     PassParametersPage1.routeName,
     PassParametersPage2.routeName,
+    '/pass-parameters-3',
+    StyledWidgetPage.routeName,
     ContainerPage.routeName,
     ButtonPage.routeName,
     ScaffoldPage.routeName,
@@ -65,6 +69,7 @@ class HomePage extends StatelessWidget {
     StackPage.routeName,
     TextPage.routeName,
     TypographyPage.routeName,
+    AnimatedTextKitPage.routeName,
     ImagePage.routeName,
     LineIconPage.routeName,
     ColumnPage.routeName,
@@ -147,9 +152,7 @@ class HomePage extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white),
       ),
-      color: Theme
-          .of(context)
-          .primaryColor,
+      color: Theme.of(context).primaryColor,
       onPressed: () {
         _onClickButton(context, item);
       },
@@ -157,11 +160,25 @@ class HomePage extends StatelessWidget {
   }
 
   void _onClickButton(BuildContext context, String routeName) {
+    /**
+     * Pass parameters
+     */
     if (routeName == PassParametersPage1.routeName) {
       PassParameters arguments = PassParameters(name: "yumin", id: 123);
       Navigator.pushNamed(context, routeName, arguments: arguments);
     } else if (routeName == PassParametersPage2.routeName) {
-      Navigator.pushNamed(context, routeName, arguments: {"name": "zhou", "age": 30});
+      Navigator.pushNamed(context, routeName, arguments: {"name": "pass-parameters-2", "age": 30});
+    } else if (routeName == '/pass-parameters-3') {
+      final route = MaterialPageRoute(
+          builder: (_) =>
+              PassParametersPage2(
+                name: "pass-parameters-3",
+                age: 31,
+              ),
+          settings: RouteSettings(name: '/pass-parameters-3'));
+
+      /// Directly push a new screen
+      Navigator.of(context).push(route);
     } else {
       Navigator.pushNamed(context, routeName);
     }
