@@ -43,9 +43,9 @@ class ColumnPage extends StatelessWidget {
                   color: Colors.orange,
                   child: Center(
                       child: Text(
-                        'Expanded -> flex: 3',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )),
+                    'Expanded -> flex: 3',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  )),
                 ),
               )
             ],

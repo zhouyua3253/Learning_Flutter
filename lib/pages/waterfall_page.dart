@@ -33,7 +33,7 @@ class WaterfallPage extends StatelessWidget {
   Container _renderItem(BuildContext context, int index) {
     Color color = index == _items.length - 1 ? Colors.cyan : Colors.orange;
     String content =
-    index == _items.length - 1 ? "LastChildLayoutType.\nfullCrossAxisExtend" : "Index - $index";
+        index == _items.length - 1 ? "LastChildLayoutType.\nfullCrossAxisExtend" : "Index - $index";
     return Container(
       height: _items[index]['height'].toDouble(),
       color: color,

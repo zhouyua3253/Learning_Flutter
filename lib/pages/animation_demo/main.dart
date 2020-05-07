@@ -40,22 +40,22 @@ class AnimationPage extends StatelessWidget {
       body: Center(
         child: Column(children: [
           ..._types.map((type) => Button(
-            child: Text(
-              type,
-              textScaleFactor: 1.2,
-            ),
-            padding: EdgeInsets.all(10),
-            onPressed: () {
-              _pushPage(context, type);
-            },
-          )),
+                child: Text(
+                  type,
+                  textScaleFactor: 1.2,
+                ),
+                padding: EdgeInsets.all(10),
+                onPressed: () {
+                  _pushPage(context, type);
+                },
+              )),
           Hero(
               tag: HeroPage.heroTag,
               child: Column(
                 children: <Widget>[
                   Text(
                     'Hero',
-                    style: Theme.of(context).textTheme.body1,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   ClipOval(
                     child: Button(

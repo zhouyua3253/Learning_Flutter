@@ -150,8 +150,8 @@ class PickerPage extends StatelessWidget {
               print("onSelectedItemChanged -> $value");
             },
             itemBuilder: (_, index) => Center(
-              child: Text("option ${index + 1}"),
-            )));
+                  child: Text("option ${index + 1}"),
+                )));
 
     // showCupertinoModalPopup(context: context, builder: (_) => picker);
     showModalBottomSheet(context: context, builder: (_) => picker);

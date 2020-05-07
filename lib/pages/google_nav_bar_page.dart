@@ -16,7 +16,6 @@ class _GoogleNavBarPageState extends State<GoogleNavBarPage> {
 
   @override
   Widget build(BuildContext context) {
-    Color activeColor = _bgColors[_selectedIndex];
     return Scaffold(
       backgroundColor: Colors.grey,
       body: Stack(

@@ -29,7 +29,7 @@ class _IntTweenPageState extends State<IntTweenPage> with SingleTickerProviderSt
     _intTweenAnimation = IntTween(begin: 0, end: 200).animate(_animationController);
   }
 
-  dispose() {
+  void dispose() {
     _animationController.dispose();
 
     super.dispose();

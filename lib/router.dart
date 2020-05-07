@@ -14,6 +14,7 @@ import 'package:flutter_tutorial/pages/curved_navigation_bar_page.dart';
 import 'package:flutter_tutorial/pages/dialog_page.dart';
 import 'package:flutter_tutorial/pages/disable_swipe_back_page.dart';
 import 'package:flutter_tutorial/pages/dismissible_page.dart';
+import 'package:flutter_tutorial/pages/form_builder_page.dart';
 import 'package:flutter_tutorial/pages/form_validation_page.dart';
 import 'package:flutter_tutorial/pages/future_builder_page.dart';
 import 'package:flutter_tutorial/pages/global_notification_page.dart';
@@ -53,6 +54,8 @@ import 'package:flutter_tutorial/pages/typography_page.dart';
 import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
+
+import 'pages/navigation_rail_page/navigation_rail_page.dart';
 
 /**
  * Named Routing
@@ -191,6 +194,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => GoogleNavBarPage(), settings: settings);
     case AnimatedTextKitPage.routeName:
       return MaterialPageRoute(builder: (context) => AnimatedTextKitPage(), settings: settings);
+    case FormBuilderPage.routeName:
+      return MaterialPageRoute(builder: (context) => FormBuilderPage(), settings: settings);
+    case NavigationRailPage.routeName:
+      return MaterialPageRoute(builder: (context) => NavigationRailPage(), settings: settings);
+
     // Avoid 404
     default:
       return MaterialPageRoute(builder: (context) => HomePage(), settings: settings);

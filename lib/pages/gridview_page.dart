@@ -66,14 +66,13 @@ class GridViewPage extends StatelessWidget {
 
   List<Widget> _createGridItem() {
     return _items
-        .map((item) =>
-        Container(
-          color: Colors.cyan,
-          alignment: Alignment.center,
-          child: Text(
-              "$item\nGridView.count(\nchildren: <Widget>[]) with crossAxisCount：横轴子元素的数量",
-              textAlign: TextAlign.center),
-        ))
+        .map((item) => Container(
+              color: Colors.cyan,
+              alignment: Alignment.center,
+              child: Text(
+                  "$item\nGridView.count(\nchildren: <Widget>[]) with crossAxisCount：横轴子元素的数量",
+                  textAlign: TextAlign.center),
+            ))
         .toList();
   }
 

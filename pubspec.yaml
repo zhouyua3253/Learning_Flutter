@@ -15,7 +15,7 @@ version: 1.0.0
 
 environment:
   # Dart version
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.8.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -34,6 +34,7 @@ dependencies:
   flutter_tindercard: 0.1.8
   google_nav_bar: 2.0.0
   line_icons: 0.2.0
+  flutter_icons: 1.1.0
   flutter_blurhash: 0.1.2
   livestream: 1.0.2
   provider: 4.0.4
@@ -48,11 +49,12 @@ dependencies:
   sliding_up_panel: 1.0.2
   animated_text_kit: 2.0.0
   styled_widget: 0.2.1+2
+  flutter_form_builder: 3.8.3
+  google_fonts: 1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

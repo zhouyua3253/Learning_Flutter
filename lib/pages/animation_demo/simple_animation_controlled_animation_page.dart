@@ -41,7 +41,7 @@ class _SimpleAnimationControlledAnimationPageState
                   }),
               RaisedButton(
                 child: Text('Playback.MIRROR'),
-                onPressed: () => this.setState(() {
+                onPressed: () => setState(() {
                   _playback = Playback.MIRROR;
                 }),
               ),
@@ -53,9 +53,10 @@ class _SimpleAnimationControlledAnimationPageState
               ),
               RaisedButton(
                 child: Text('Playback.PAUSE'),
-                onPressed: () => this.setState(() {
-                  _playback = Playback.PAUSE;
-                }),
+                onPressed: () =>
+                    setState(() {
+                      _playback = Playback.PAUSE;
+                    }),
               ),
               RaisedButton(
                 child: Text('Playback.PLAY_FORWARD'),

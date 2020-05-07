@@ -6,6 +6,7 @@ import 'package:flutter_tutorial/stores/counter_store.dart';
 import 'package:flutter_tutorial/stores/user_store.dart';
 import 'package:flutter_tutorial/utils/eaesy_color.dart' show kEaesyColor;
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   MultiProvider providerWrapApp = MultiProvider(
@@ -47,14 +48,16 @@ MaterialApp app = MaterialApp(
    */
   themeMode: ThemeMode.system,
   theme: ThemeData(
-    primaryColor: Color(kEaesyColor),
-    brightness: Brightness.light,
-    // fontFamily: 'CourierPrime',
+      primaryColor: Color(kEaesyColor),
+      brightness: Brightness.light,
+      // fontFamily: 'CourierPrime',
 
-    /// 统一控件默认风格
-    /// ios style 在mobile web上会导致swipe back issue
-    /// platform: TargetPlatform.android
-  ),
+      /// 统一控件默认风格
+      /// ios style 在mobile web上会导致swipe back issue
+      /// platform: TargetPlatform.android
+
+      /// set an entire text theme to use google font.
+      textTheme: GoogleFonts.andikaTextTheme()),
   darkTheme: ThemeData(
       brightness: Brightness.dark,
       // 统一使用iOS style

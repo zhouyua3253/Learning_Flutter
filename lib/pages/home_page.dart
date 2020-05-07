@@ -49,10 +49,12 @@ import 'cal_widget_size_position.dart';
 import 'curved_navigation_bar_page.dart';
 import 'disable_swipe_back_page.dart';
 import 'dismissible_page.dart';
+import 'form_builder_page.dart';
 import 'google_nav_bar_page.dart';
 import 'gridview_page.dart';
 import 'linked_scroll_page.dart';
 import 'listview_page.dart';
+import 'navigation_rail_page/navigation_rail_page.dart';
 
 class HomePage extends StatelessWidget {
   static const String routeName = '/';
@@ -76,6 +78,7 @@ class HomePage extends StatelessWidget {
     WrapPage.routeName,
     TextFieldPage.routeName,
     FormValidationPage.routeName,
+    FormBuilderPage.routeName,
     ScrollViewPage.routeName,
     ListViewPage.routeName,
     ScrollablePositionedListPage.routeName,
@@ -90,6 +93,7 @@ class HomePage extends StatelessWidget {
     DialogPage.routeName,
     PickerPage.routeName,
     GoogleNavBarPage.routeName,
+    NavigationRailPage.routeName,
     AnimationPage.routeName,
     SlidingUpPanelPage.routeName,
     DismissiblePage.routeName,
@@ -170,8 +174,7 @@ class HomePage extends StatelessWidget {
       Navigator.pushNamed(context, routeName, arguments: {"name": "pass-parameters-2", "age": 30});
     } else if (routeName == '/pass-parameters-3') {
       final route = MaterialPageRoute(
-          builder: (_) =>
-              PassParametersPage2(
+          builder: (_) => PassParametersPage2(
                 name: "pass-parameters-3",
                 age: 31,
               ),

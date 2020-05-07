@@ -176,20 +176,23 @@ class _ScaffoldPageState extends State<ScaffoldPage> with SingleTickerProviderSt
 
           /// Custom bottom bar, with floating action button inside
           : BottomAppBar(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.menu),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.search),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.menu),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.search),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
               ),
               color: Colors.blueGrey,
               // 圆形凹口

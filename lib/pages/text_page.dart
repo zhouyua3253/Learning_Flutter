@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextPage extends StatelessWidget {
   static const String routeName = '/text';
@@ -256,9 +257,27 @@ class TextPage extends StatelessWidget {
                 ),
               ),
               Divider(),
+              /**
+               * https://pub.dev/packages/google_fonts
+               *
+               * print(GoogleFonts.asMap());
+               */
+              Text(
+                'GoogleFonts.aclonica',
+                style: GoogleFonts.aclonica(fontSize: 24, color: Colors.purple),
+              ),
+              Text(
+                'GoogleFonts.pacifico',
+                style: GoogleFonts.pacifico(fontSize: 24, fontWeight: FontWeight.w700),
+              ),
+              Text(
+                'GoogleFonts.warnes',
+                style: GoogleFonts.warnes(letterSpacing: 1),
+              ),
+              Divider(),
               RichText(
                 text: TextSpan(
-                  // Default style for the rich text
+                    // Default style for the rich text
                     style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: 'CourierPrime'),
                     text: 'RichText: Thanks for attending ',
                     children: [
@@ -270,7 +289,11 @@ class TextPage extends StatelessWidget {
                               fontStyle: FontStyle.italic)),
                       TextSpan(
                           text: ' — you can still watch the video.',
-                          style: Theme.of(context).textTheme.body2.copyWith(
+                          style: Theme
+                              .of(context)
+                              .textTheme
+                              .bodyText2
+                              .copyWith(
                               color: Colors.orange, decoration: TextDecoration.lineThrough)),
                     ]),
               ),

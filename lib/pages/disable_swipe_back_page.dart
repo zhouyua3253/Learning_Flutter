@@ -24,7 +24,7 @@ class DisableSwipeBackPage extends StatelessWidget {
 
   Future<bool> _onWillPop(BuildContext context) async {
     /// Disable all the back action.
-    return false;
+    // return false;
 
     /// Disable Swipe to Navigate Back
     if (Navigator.of(context).userGestureInProgress) {
