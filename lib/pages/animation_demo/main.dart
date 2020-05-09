@@ -14,9 +14,14 @@ import 'color_tween_page.dart';
 import 'hero_page.dart';
 import 'tween_animation_builder_page.dart';
 
-class AnimationPage extends StatelessWidget {
+class AnimationPage extends StatefulWidget {
   static const String routeName = '/animation';
 
+  @override
+  _AnimationPageState createState() => _AnimationPageState();
+}
+
+class _AnimationPageState extends State<AnimationPage> with RouteAware {
   final List<String> _types = [
     'Tween+AnimatedBuilder',
     'ColorTween+AnimatedBuilder',
@@ -30,6 +35,39 @@ class AnimationPage extends StatelessWidget {
     "${SimpleAnimationControllerXPage.routeName}",
     "${SimpleAnimationControlledAnimationPage.routeName}",
   ];
+
+  @override
+  void didPop() {
+    /// Called when the current route has been popped off.
+    print('didPop');
+
+    super.didPop();
+  }
+
+  @override
+  void didPush() {
+    /// Called when the current route has been pushed.
+    print('didPush');
+
+    super.didPush();
+  }
+
+  @override
+  void didPopNext() {
+    /// Called when the top route has been popped off, and the current route shows up.
+    /// 路由返回到当前页面 可以弥补手势返回不触发
+    print('didPopNext');
+
+    super.didPopNext();
+  }
+
+  @override
+  void didPushNext() {
+    /// Called when a new route has been pushed, and the current route is no longer visible.
+    print('didPushNext');
+
+    super.didPushNext();
+  }
 
   @override
   Widget build(BuildContext context) {

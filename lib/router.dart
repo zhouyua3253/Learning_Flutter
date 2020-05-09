@@ -56,6 +56,7 @@ import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
 
 import 'pages/navigation_rail_page/navigation_rail_page.dart';
+import 'pages/visual_density_page.dart';
 
 /**
  * Named Routing
@@ -198,6 +199,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => FormBuilderPage(), settings: settings);
     case NavigationRailPage.routeName:
       return MaterialPageRoute(builder: (context) => NavigationRailPage(), settings: settings);
+    case VisualDensityPage.routeName:
+      return MaterialPageRoute(builder: (context) => VisualDensityPage(), settings: settings);
 
     // Avoid 404
     default:

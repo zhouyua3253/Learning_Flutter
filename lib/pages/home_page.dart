@@ -55,6 +55,7 @@ import 'gridview_page.dart';
 import 'linked_scroll_page.dart';
 import 'listview_page.dart';
 import 'navigation_rail_page/navigation_rail_page.dart';
+import 'visual_density_page.dart';
 
 class HomePage extends StatelessWidget {
   static const String routeName = '/';
@@ -65,6 +66,7 @@ class HomePage extends StatelessWidget {
     '/pass-parameters-3',
     StyledWidgetPage.routeName,
     ContainerPage.routeName,
+    VisualDensityPage.routeName,
     ButtonPage.routeName,
     ScaffoldPage.routeName,
     TransformPage.routeName,

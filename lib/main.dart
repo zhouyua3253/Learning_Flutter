@@ -42,6 +42,7 @@ MaterialApp app = MaterialApp(
 //    '/${ScaffoldPage.routeName}': (context) => ScaffoldPage()
 //  },
 
+  navigatorObservers: [NavigatorObserver()],
   /**
    * set theme 和 darkTheme的brightness
    * 根据系统的light mode、dark mode 自动选择应用theme
@@ -50,6 +51,10 @@ MaterialApp app = MaterialApp(
   theme: ThemeData(
       primaryColor: Color(kEaesyColor),
       brightness: Brightness.light,
+      // 视觉密度 影响所有的button默认padding
+      // visualDensity: const VisualDensity(vertical: 3, horizontal: 3),
+      visualDensity: VisualDensity.standard, // VisualDensity.compact, VisualDensity.comfortable
+
       // fontFamily: 'CourierPrime',
 
       /// 统一控件默认风格
