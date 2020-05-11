@@ -54,21 +54,21 @@ import 'package:flutter_tutorial/pages/typography_page.dart';
 import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
-
 import 'pages/navigation_rail_page/navigation_rail_page.dart';
 import 'pages/visual_density_page.dart';
 
-/**
- * Named Routing
- * https://www.filledstacks.com/post/flutter-navigation-cheatsheet-a-guide-to-named-routing/
- *
- * Web Url Navigation
- * https://medium.com/flutter-community/advance-url-navigation-for-flutter-web-d8b5f2d424e6
- */
+/// 页面路由监听者
+final RouteObserver routeObserver = RouteObserver();
+
+/// Named Routing
+/// https://www.filledstacks.com/post/flutter-navigation-cheatsheet-a-guide-to-named-routing/
+///
+/// Web Url Navigation
+/// https://medium.com/flutter-community/advance-url-navigation-for-flutter-web-d8b5f2d424e6
 Route<dynamic> generateRoute(RouteSettings settings) {
-  String name = settings.name;
-  Object arguments = settings.arguments;
-  print("name $name, arguments $arguments");
+  final String name = settings.name;
+  final Object arguments = settings.arguments;
+  print('name $name, arguments $arguments');
 
   /// settings is must for flutter web project to change the url path
   /// /pass-parameters -> /pass-parameters?name=yumin&id=123

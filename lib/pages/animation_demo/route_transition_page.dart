@@ -9,7 +9,7 @@ class RouteTransitionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('RouteTransition'),
+        title: const Text('RouteTransition'),
       ),
       body: SafeArea(
         child: Center(

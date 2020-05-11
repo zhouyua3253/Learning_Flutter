@@ -78,14 +78,13 @@ class GridViewPage extends StatelessWidget {
 
   List<Widget> _createGridItems() {
     return _items
-        .map((item) =>
-        Container(
-          color: Colors.red[300],
-          alignment: Alignment.center,
-          child: Text(
-              "$item\nGridView.extent(\nchildren: <Widget>[]) with maxCrossAxisExtent：横轴子元素的最大长度",
-              textAlign: TextAlign.center),
-        ))
+        .map((item) => Container(
+              color: Colors.red[300],
+              alignment: Alignment.center,
+              child: Text(
+                  "$item\nGridView.extent(\nchildren: <Widget>[]) with maxCrossAxisExtent：横轴子元素的最大长度",
+                  textAlign: TextAlign.center),
+            ))
         .toList();
   }
 

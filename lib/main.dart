@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  MultiProvider providerWrapApp = MultiProvider(
+  final MultiProvider providerWrapApp = MultiProvider(
     providers: [
       ChangeNotifierProvider<CounterStore>(
         create: (_) => CounterStore(),
@@ -42,7 +42,9 @@ MaterialApp app = MaterialApp(
 //    '/${ScaffoldPage.routeName}': (context) => ScaffoldPage()
 //  },
 
-  navigatorObservers: [NavigatorObserver()],
+  /// 监听路由变化
+  navigatorObservers: [routeObserver],
+
   /**
    * set theme 和 darkTheme的brightness
    * 根据系统的light mode、dark mode 自动选择应用theme

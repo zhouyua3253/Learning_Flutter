@@ -53,10 +53,9 @@ class _SimpleAnimationControlledAnimationPageState
               ),
               RaisedButton(
                 child: Text('Playback.PAUSE'),
-                onPressed: () =>
-                    setState(() {
-                      _playback = Playback.PAUSE;
-                    }),
+                onPressed: () => setState(() {
+                  _playback = Playback.PAUSE;
+                }),
               ),
               RaisedButton(
                 child: Text('Playback.PLAY_FORWARD'),

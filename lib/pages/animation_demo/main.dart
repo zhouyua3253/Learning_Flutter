@@ -8,6 +8,7 @@ import 'package:flutter_tutorial/pages/animation_demo/simple_animation_controlle
 import 'package:flutter_tutorial/pages/animation_demo/simple_animation_multi_track_tween_page.dart';
 import 'package:flutter_tutorial/pages/animation_demo/tween_page.dart';
 
+import '../../router.dart';
 import 'animated_icon_page.dart';
 import 'animated_switcher_page.dart';
 import 'color_tween_page.dart';
@@ -31,10 +32,22 @@ class _AnimationPageState extends State<AnimationPage> with RouteAware {
     'AnimatedCrossFade 淡入切换显示控件',
     'TweenAnimationBuilder 一次性动画',
     '',
-    "${SimpleAnimationMultiTrackTweenPage.routeName}",
-    "${SimpleAnimationControllerXPage.routeName}",
-    "${SimpleAnimationControlledAnimationPage.routeName}",
+    SimpleAnimationMultiTrackTweenPage.routeName,
+    SimpleAnimationControllerXPage.routeName,
+    SimpleAnimationControlledAnimationPage.routeName,
   ];
+
+  @override
+  void didChangeDependencies() {
+    routeObserver.subscribe(this, ModalRoute.of(context));
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    routeObserver.unsubscribe(this);
+    super.dispose();
+  }
 
   @override
   void didPop() {
@@ -73,7 +86,7 @@ class _AnimationPageState extends State<AnimationPage> with RouteAware {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Animation"),
+        title: const Text('Animation'),
       ),
       body: Center(
         child: Column(children: [
