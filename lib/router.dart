@@ -14,7 +14,6 @@ import 'package:flutter_tutorial/pages/curved_navigation_bar_page.dart';
 import 'package:flutter_tutorial/pages/dialog_page.dart';
 import 'package:flutter_tutorial/pages/disable_swipe_back_page.dart';
 import 'package:flutter_tutorial/pages/dismissible_page.dart';
-import 'package:flutter_tutorial/pages/form_builder_page.dart';
 import 'package:flutter_tutorial/pages/form_validation_page.dart';
 import 'package:flutter_tutorial/pages/future_builder_page.dart';
 import 'package:flutter_tutorial/pages/global_notification_page.dart';
@@ -55,7 +54,9 @@ import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
 import 'pages/navigation_rail_page/navigation_rail_page.dart';
+import 'pages/section_list_page.dart';
 import 'pages/visual_density_page.dart';
+import 'pages/water_wave_page.dart';
 
 /// 页面路由监听者
 final RouteObserver routeObserver = RouteObserver();
@@ -123,6 +124,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => ScrollViewPage(), settings: settings);
     case ListViewPage.routeName:
       return MaterialPageRoute(builder: (context) => ListViewPage(), settings: settings);
+    case SectionListPage.routeName:
+      return MaterialPageRoute(builder: (context) => SectionListPage(), settings: settings);
     case ScrollablePositionedListPage.routeName:
       return MaterialPageRoute(builder: (_) => ScrollablePositionedListPage(), settings: settings);
     case GridViewPage.routeName:
@@ -195,12 +198,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => GoogleNavBarPage(), settings: settings);
     case AnimatedTextKitPage.routeName:
       return MaterialPageRoute(builder: (context) => AnimatedTextKitPage(), settings: settings);
-    case FormBuilderPage.routeName:
-      return MaterialPageRoute(builder: (context) => FormBuilderPage(), settings: settings);
     case NavigationRailPage.routeName:
       return MaterialPageRoute(builder: (context) => NavigationRailPage(), settings: settings);
     case VisualDensityPage.routeName:
       return MaterialPageRoute(builder: (context) => VisualDensityPage(), settings: settings);
+    case WaterWavePage.routeName:
+      return MaterialPageRoute(builder: (context) => WaterWavePage(), settings: settings);
 
     // Avoid 404
     default:

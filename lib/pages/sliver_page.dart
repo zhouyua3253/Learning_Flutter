@@ -1,18 +1,20 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:styled_widget/styled_widget.dart';
+import 'package:flutter/src/rendering/sliver_persistent_header.dart';
 
 class SliverPage extends StatelessWidget {
   static const String routeName = '/sliver-scroll-view';
 
   final List<Map<String, int>> _items =
-      List.generate(6, (index) => {'index': index, 'height': Random().nextInt(100) + 40});
+      List.generate(12, (index) => {'index': index, 'height': Random().nextInt(100) + 40});
 
   @override
   Widget build(BuildContext context) {
-    SliverChildBuilderDelegate _sliverFixedExtentBuildDelegate =
+    final SliverChildBuilderDelegate _sliverFixedExtentBuildDelegate =
         SliverChildBuilderDelegate(_renderListFixedExtentItem, childCount: _items.length);
-    SliverChildBuilderDelegate _sliverBuildDelegate =
+    final SliverChildBuilderDelegate _sliverBuildDelegate =
         SliverChildBuilderDelegate(_renderListItem, childCount: _items.length);
 
     return Material(
@@ -21,13 +23,15 @@ class SliverPage extends StatelessWidget {
         child: NotificationListener(
           child: CustomScrollView(
             /// 安卓上超出范围的上下拉
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             slivers: <Widget>[
               SliverAppBar(
                 // Based on `SliverPersistentHeader`
                 /// 可以向下拉伸
                 stretch: true,
 
+                /// 下拉时立即出现
+                // floating: true,
                 /// 粘滞效果
                 pinned: true,
                 expandedHeight: 250,
@@ -44,6 +48,8 @@ class SliverPage extends StatelessWidget {
                   ),
                 ),
               ),
+
+              /// 包裹普通Widget为Sliver Widget
               SliverToBoxAdapter(
                 child: Container(
                   color: Colors.orange,
@@ -57,15 +63,27 @@ class SliverPage extends StatelessWidget {
                   alignment: Alignment.center,
                 ),
               ),
+
+              /// item高度固定的ListView
               SliverFixedExtentList(
                 itemExtent: 60,
                 delegate: _sliverFixedExtentBuildDelegate,
               ),
+
+              /// 自己实现 SliverPersistentHeader
+              SliverPersistentHeader(
+                pinned: true,
+                // floating: true,
+                delegate: MySliverPersistentHeader(minExtent: 70, maxExtent: 240),
+              ),
+
+              /// item高度可变的ListView
               SliverList(
                 delegate: _sliverBuildDelegate,
               ),
+
               SliverPadding(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(25),
                 sliver: SliverGrid.count(
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
@@ -74,7 +92,7 @@ class SliverPage extends StatelessWidget {
                     children: _renderGridChildren(Colors.cyan, 'SliverGrid.count')),
               ),
               SliverGrid.extent(
-                  maxCrossAxisExtent: 250,
+                  maxCrossAxisExtent: 150,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   childAspectRatio: 2,
@@ -112,4 +130,59 @@ class SliverPage extends StatelessWidget {
             ))
         .toList();
   }
+}
+
+/// The custom SliverPersistentHeader
+class MySliverPersistentHeader implements SliverPersistentHeaderDelegate {
+  MySliverPersistentHeader({@required double minExtent, @required double maxExtent})
+      : _minExtent = minExtent,
+        _maxExtent = maxExtent;
+
+  final double _minExtent;
+  final double _maxExtent;
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    print(shrinkOffset);
+
+    /// 0 ~ 1
+    double offsetPercentage = shrinkOffset / _maxExtent;
+    double textOpacity = offsetPercentage * 0.5 + 0.5;
+    double fontSize = 16 + offsetPercentage * 10;
+
+    return Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        Image.asset('images/5.jpg', fit: BoxFit.cover),
+        Container().backgroundLinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.transparent, Colors.deepOrangeAccent],
+            stops: [0.4, 1]),
+        Positioned(
+          bottom: 16,
+          right: 10,
+          child: const Text('MySliverPersistentHeader')
+              .textColor(Colors.white)
+              .fontSize(fontSize)
+              .opacity(textOpacity),
+        )
+      ],
+    );
+  }
+
+  @override
+  double get maxExtent => _maxExtent;
+
+  @override
+  double get minExtent => _minExtent;
+
+  @override
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => false;
+
+  @override
+  FloatingHeaderSnapConfiguration get snapConfiguration => null;
+
+  @override
+  OverScrollHeaderStretchConfiguration get stretchConfiguration => null;
 }

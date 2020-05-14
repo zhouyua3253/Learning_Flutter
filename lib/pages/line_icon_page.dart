@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
+/// https://oblador.github.io/react-native-vector-icons/
+import 'package:flutter_icons/flutter_icons.dart';
+
 class LineIconPage extends StatelessWidget {
   static const String routeName = '/line-icon';
 
@@ -8,12 +11,14 @@ class LineIconPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List icons = List();
-    _icons.forEach((key, value) => icons.add({"name": key, "iconData": value}));
+    final List icons = [];
+    _icons.forEach((key, value) => icons.add({'name': key, 'iconData': value}));
+
+    // Icon(FlutterIcons.alert_box_outline_mco);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('LineIcons'),
+        title: const Text('LineIcons'),
       ),
       body: SafeArea(
           child: GridView.count(

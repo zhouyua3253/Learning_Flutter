@@ -88,8 +88,7 @@ class GridViewPage extends StatelessWidget {
         .toList();
   }
 
-  Widget _renderGridItem(BuildContext context, int index) =>
-      Container(
+  Widget _renderGridItem(BuildContext context, int index) => Container(
         color: Colors.orangeAccent,
         alignment: Alignment.center,
         child: Text(
