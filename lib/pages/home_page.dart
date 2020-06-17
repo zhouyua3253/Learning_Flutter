@@ -46,15 +46,19 @@ import 'absorb_pointer_page.dart';
 import 'animated_text_page.dart';
 import 'animation_demo/animated_list_page.dart';
 import 'cal_widget_size_position.dart';
+import 'chip_page.dart';
 import 'curved_navigation_bar_page.dart';
 import 'disable_swipe_back_page.dart';
 import 'dismissible_page.dart';
+import 'expansion_tile_page.dart';
 import 'google_nav_bar_page.dart';
 import 'gridview_page.dart';
 import 'linked_scroll_page.dart';
 import 'listview_page.dart';
 import 'navigation_rail_page/navigation_rail_page.dart';
+import 'reorder_list_page.dart';
 import 'section_list_page.dart';
+import 'tile_page.dart';
 import 'visual_density_page.dart';
 import 'water_wave_page.dart';
 
@@ -79,11 +83,13 @@ class HomePage extends StatelessWidget {
     LineIconPage.routeName,
     ColumnPage.routeName,
     WrapPage.routeName,
+    ExpansionTilePage.routeName,
     TextFieldPage.routeName,
     FormValidationPage.routeName,
     ScrollViewPage.routeName,
     ListViewPage.routeName,
     ScrollablePositionedListPage.routeName,
+    ReOrderListPage.routeName,
     SectionListPage.routeName,
     GridViewPage.routeName,
     LinkedScrollPage.routeName,
@@ -94,6 +100,7 @@ class HomePage extends StatelessWidget {
     OpacityPage.routeName,
     GradientPage.routeName,
     DialogPage.routeName,
+    TilePage.routeName,
     PickerPage.routeName,
     GoogleNavBarPage.routeName,
     NavigationRailPage.routeName,
@@ -105,6 +112,7 @@ class HomePage extends StatelessWidget {
     ShaderMaskPage.routeName,
     AbsorbPointerPage.routeName,
     ClipPage.routeName,
+    ChipPage.routeName,
     BlurPage.routeName,
     BlurHashPage.routeName,
     PageViewPage.routeName,

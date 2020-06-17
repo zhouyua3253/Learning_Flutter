@@ -29,7 +29,7 @@ class AnimatedTextKitPage extends StatelessWidget {
                 Container(
                   color: Colors.grey[100],
                   child: RotateAnimatedTextKit(
-                      text: ["AWESOME", "OPTIMISTIC", "DIFFERENT"],
+                      text: ['AWESOME', 'OPTIMISTIC', 'DIFFERENT'],
                       duration: Duration(seconds: 2),
                       totalRepeatCount: totalRepeatCount,
                       transitionHeight: 60,
@@ -40,7 +40,7 @@ class AnimatedTextKitPage extends StatelessWidget {
             Divider(
               thickness: 1,
             ),
-            Text('FadeAnimatedTextKit'),
+            const Text('FadeAnimatedTextKit'),
             Container(
               color: Colors.grey[100],
               child: FadeAnimatedTextKit(

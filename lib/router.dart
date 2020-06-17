@@ -53,8 +53,12 @@ import 'package:flutter_tutorial/pages/typography_page.dart';
 import 'package:flutter_tutorial/pages/view_model_provider/example_page.dart';
 import 'package:flutter_tutorial/pages/waterfall_page.dart';
 import 'package:flutter_tutorial/pages/wrap_page.dart';
+import 'pages/chip_page.dart';
+import 'pages/expansion_tile_page.dart';
 import 'pages/navigation_rail_page/navigation_rail_page.dart';
+import 'pages/reorder_list_page.dart';
 import 'pages/section_list_page.dart';
+import 'pages/tile_page.dart';
 import 'pages/visual_density_page.dart';
 import 'pages/water_wave_page.dart';
 
@@ -204,6 +208,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => VisualDensityPage(), settings: settings);
     case WaterWavePage.routeName:
       return MaterialPageRoute(builder: (context) => WaterWavePage(), settings: settings);
+    case ChipPage.routeName:
+      return MaterialPageRoute(builder: (context) => ChipPage(), settings: settings);
+    case ExpansionTilePage.routeName:
+      return MaterialPageRoute(builder: (context) => ExpansionTilePage(), settings: settings);
+    case ReOrderListPage.routeName:
+      return MaterialPageRoute(builder: (context) => ReOrderListPage(), settings: settings);
+    case TilePage.routeName:
+      return MaterialPageRoute(builder: (context) => TilePage(), settings: settings);
 
     // Avoid 404
     default:

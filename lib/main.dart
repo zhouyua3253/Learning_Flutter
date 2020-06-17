@@ -51,9 +51,9 @@ MaterialApp app = MaterialApp(
    */
   themeMode: ThemeMode.system,
   theme: ThemeData(
-      primaryColor: Color(kEaesyColor),
+      primaryColor: const Color(kEaesyColor),
       brightness: Brightness.light,
-      // 视觉密度 影响所有的button默认padding
+      // 视觉密度 影响所有的button和chip的默认padding
       // visualDensity: const VisualDensity(vertical: 3, horizontal: 3),
       visualDensity: VisualDensity.standard, // VisualDensity.compact, VisualDensity.comfortable
 

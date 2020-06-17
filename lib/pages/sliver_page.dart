@@ -25,15 +25,22 @@ class SliverPage extends StatelessWidget {
             /// 安卓上超出范围的上下拉
             physics: const BouncingScrollPhysics(),
             slivers: <Widget>[
+              /// 自己实现 SliverPersistentHeader
+//              SliverPersistentHeader(
+//                pinned: true,
+//                // floating: true,
+//                delegate: MySliverPersistentHeader(minExtent: 70, maxExtent: 240),
+//              ),
               SliverAppBar(
                 // Based on `SliverPersistentHeader`
                 /// 可以向下拉伸
                 stretch: true,
 
                 /// 下拉时立即出现
-                // floating: true,
+                floating: true,
+
                 /// 粘滞效果
-                pinned: true,
+                pinned: false,
                 expandedHeight: 250,
                 backgroundColor: Colors.pinkAccent,
                 flexibleSpace: FlexibleSpaceBar(

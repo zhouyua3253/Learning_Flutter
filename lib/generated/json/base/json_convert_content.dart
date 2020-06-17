@@ -39,15 +39,43 @@ class JsonConvert<T> {
     return data as T;
   }
 
-  static T fromJsonAsT<T>(json) {
-    switch (T.toString()) {
+  //Go back to a single instance by type
+  static _fromJsonSingle(String type, json) {
+    switch (type) {
       case 'LoopLibraryModel':
-        return LoopLibraryModel().fromJson(json) as T;
+        return LoopLibraryModel().fromJson(json);
       case 'LoopLibraryCard':
-        return LoopLibraryCard().fromJson(json) as T;
+        return LoopLibraryCard().fromJson(json);
       case 'LoopLibraryCardsLoop':
-        return LoopLibraryCardsLoop().fromJson(json) as T;
+        return LoopLibraryCardsLoop().fromJson(json);
     }
     return null;
+  }
+
+  //empty list is returned by type
+  static _getListFromType(String type) {
+    switch (type) {
+      case 'LoopLibraryModel':
+        return List<LoopLibraryModel>();
+      case 'LoopLibraryCard':
+        return List<LoopLibraryCard>();
+      case 'LoopLibraryCardsLoop':
+        return List<LoopLibraryCardsLoop>();
+    }
+    return null;
+  }
+
+  static M fromJsonAsT<M>(json) {
+    String type = M.toString();
+    if (json is List && type.contains("List<")) {
+      String itemType = type.substring(5, type.length - 1);
+      List tempList = _getListFromType(itemType);
+      json.forEach((itemJson) {
+        tempList.add(_fromJsonSingle(type.substring(5, type.length - 1), itemJson));
+      });
+      return tempList as M;
+    } else {
+      return _fromJsonSingle(M.toString(), json) as M;
+    }
   }
 }

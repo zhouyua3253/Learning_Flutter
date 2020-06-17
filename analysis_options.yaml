@@ -3,9 +3,16 @@
 # Example analyzer config
 # https://github.com/flutter/flutter/blob/master/analysis_options.yaml
 
+# https://pub.dev/packages/pedantic
+# include: package:pedantic/analysis_options.1.8.0.yaml
+
+# https://juejin.im/post/5ecfd02af265da76b559a3f4
+
 analyzer:
   strong-mode:
+    # 隐式转换
     implicit-casts: false
+    # 隐式dynamic
     implicit-dynamic: true
   errors:
     # treat missing required parameters as a warning (not a hint)
@@ -20,9 +27,11 @@ analyzer:
     sdk_version_async_exported_from_core: ignore
   exclude:
     - "lib/generated/**"
-#  enable-experiment:
-#    - non-nullable
+  enable-experiment:
+    - extension-methods
+    # - non-nullable
 
+# optional, will overwrite the pedantic/analysis_options
 linter:
   rules:
     # these rules are documented on and in the same order as

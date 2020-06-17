@@ -13,6 +13,7 @@ import 'animated_icon_page.dart';
 import 'animated_switcher_page.dart';
 import 'color_tween_page.dart';
 import 'hero_page.dart';
+import 'motion_animations.dart';
 import 'tween_animation_builder_page.dart';
 
 class AnimationPage extends StatefulWidget {
@@ -31,7 +32,7 @@ class _AnimationPageState extends State<AnimationPage> with RouteAware {
     'AnimatedSwitcher 切换控件',
     'AnimatedCrossFade 淡入切换显示控件',
     'TweenAnimationBuilder 一次性动画',
-    '',
+    'MotionAnimations',
     SimpleAnimationMultiTrackTweenPage.routeName,
     SimpleAnimationControllerXPage.routeName,
     SimpleAnimationControlledAnimationPage.routeName,
@@ -182,6 +183,11 @@ class _AnimationPageState extends State<AnimationPage> with RouteAware {
       case 'RouteTransition':
         Navigator.of(context).push<MaterialPageRoute>(
             MaterialPageRoute(builder: (BuildContext context) => RouteTransitionPage()));
+        break;
+
+      case 'MotionAnimations':
+        Navigator.of(context).push<MaterialPageRoute>(
+            MaterialPageRoute(builder: (BuildContext context) => MotionAnimationsPage()));
         break;
     }
   }

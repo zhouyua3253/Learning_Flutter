@@ -54,7 +54,7 @@ class RouteTransitionPage extends StatelessWidget {
 
   void _pushNewPage(BuildContext context, PageTransitionType type) {
     /// https://pub.dev/packages/page_transition
-    Navigator.of(context).push(PageTransition(
+    Navigator.of(context).push<PageTransition>(PageTransition(
         type: type,
         child: HomePage(),
         alignment: Alignment.center,

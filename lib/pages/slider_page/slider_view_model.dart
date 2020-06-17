@@ -5,7 +5,7 @@ class SliderViewModel extends ChangeNotifier {
 
   double get sliderValue => _sliderValue;
 
-  RangeValues _rangeValues = RangeValues(2, 6);
+  RangeValues _rangeValues = const RangeValues(2, 6);
 
   RangeValues get rangeValues => _rangeValues;
 
